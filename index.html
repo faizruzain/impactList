@@ -4,66 +4,91 @@
 <head>
   <meta charset="utf-8">
   <title>NodeB</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <script src="script.js" charset="utf-8"></script>
 </head>
 
 <body>
 
-  <label for="impact">Impact:</label>
-  <br>
-  <textarea id="txt" name="impact" rows="8" cols="80" placeholder="Ex: PLI136,PLI080,PLI023 &#10;or: PLI136;PLI080;PLI023"></textarea>
-  <br>
-  <button type="button" name="button" onclick="getVal();">Submit</button>
-  <br>
-  <br>
-  <label for="result">Result:</label>
-  <br>
-  <textarea id="txtRes" name="result" rows="11" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
-  <br>
-  <label for="select">Separate with: </label>
-  <select id="slct" name="select" onchange="separate();">
-    <option value=""></option>
-    <option value=",">Comma (,)</option>
-    <option value=";">Semicolon (;)</option>
-  </select>
-  <br>
-  <br>
-  <label for="fix">Get Site_ID from Left:</label>
-  <br>
-  <textarea id="fix" name="fix" rows="8" cols="80" placeholder="Ex:&#10;BKO023MW1_TSEL_Pamenang2&#10;SRJ004MW1_TSEL_TanjungSarolangun&#10;SRJ005MW1_TSEL_Sarolangun3&#10;or:&#10;MDU066&#10;MDU110&#10;MDU195"></textarea>
-  <br>
-  <button type="button" name="button" onclick="fix();">Get</button>
-  <br>
-  <br>
-  <label for="fixRes">Result:</label>
-  <br>
-  <textarea id="fixRes" name="fixRes" rows="8" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
-  <br>
-  <label for="select2">Separate with: </label>
-  <select id="slct2" name="select2" onchange="separate2();">
-    <option value=""></option>
-    <option value=",">Comma (,)</option>
-    <option value=";">Semicolon (;)</option>
-  </select>
-  <br>
-  <br>
-  <label for="reporting">Reporting OSO</label>
-  <br>
-  <textarea id="report" name="reporting" rows="8" cols="80">&#13;&#10;SALSIM:&nbsp;
-  </textarea>
-  <br>
-  <button type="button" name="button" onclick="report();">Submit</button>
-  <br>
-  <br>
-  <label for="reportRes">Result:</label>
-  <br>
-  <textarea id="reportRes" name="reportRes" rows="8" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+  <ul class="nav justify-content-center nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="fo" aria-selected="true">Impact List</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="radio" aria-selected="false">Radio</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="reportingoso" aria-selected="false">Reporting OSO</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active tabAing" id="home" role="tabpanel" aria-labelledby="fo-tab">
+
+      <label for="impact">Impact:</label>
+      <br>
+      <textarea class="form-control" id="txt" name="impact" rows="8" cols="100" placeholder="Ex: PLI136,PLI080,PLI023 &#10;or: PLI136;PLI080;PLI023"></textarea>
+
+      <button class="btn btn-primary" type="button" name="button" onclick="getVal();">Submit</button>
+      <br>
+      <br>
+      <label for="result">Result:</label>
+      <br>
+      <textarea class="form-control" id="txtRes" name="result" rows="11" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+
+      <label for="select">Separate with: </label>
+      <select class="form-select" id="slct" name="select" onchange="separate();">
+        <option value=""></option>
+        <option value=",">Comma (,)</option>
+        <option value=";">Semicolon (;)</option>
+      </select>
+      <br>
+      <br>
+      <label for="fix">Get Site_ID from Left:</label>
+      <br>
+      <textarea class="form-control" id="fix" name="fix" rows="8" cols="80" placeholder="Ex:&#10;BKO023MW1_TSEL_Pamenang2&#10;SRJ004MW1_TSEL_TanjungSarolangun&#10;SRJ005MW1_TSEL_Sarolangun3&#10;or:&#10;MDU066&#10;MDU110&#10;MDU195"></textarea>
+
+      <button class="btn btn-primary" type="button" name="button" onclick="fix();">Get</button>
+      <br>
+      <br>
+      <label for="fixRes">Result:</label>
+      <br>
+      <textarea class="form-control" id="fixRes" name="fixRes" rows="8" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+
+      <label for="select2">Separate with: </label>
+      <select class="form-select" id="slct2" name="select2" onchange="separate2();">
+        <option value=""></option>
+        <option value=",">Comma (,)</option>
+        <option value=";">Semicolon (;)</option>
+      </select>
+
+    </div>
+    <div class="tab-pane fade tabAing" id="profile" role="tabpanel" aria-labelledby="radio-tab">Coming Soon..</div>
+    <div class="tab-pane fade tabAing" id="contact" role="tabpanel" aria-labelledby="reportingoso-tab">
+
+      <label for="reporting">Reporting OSO</label>
+      <br>
+      <textarea class="form-control" id="report" name="reporting" rows="8" cols="80">&#13;&#10;SALSIM:&nbsp;
+      </textarea>
+
+      <button class="btn btn-primary" type="button" name="button" onclick="report();">Submit</button>
+      <br>
+      <br>
+      <label for="reportRes">Result:</label>
+      <br>
+      <textarea class="form-control" id="reportRes" name="reportRes" rows="8" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+
+    </div>
+  </div>
 
 
 
 
-<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  <script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
 </body>
 
 </html>
