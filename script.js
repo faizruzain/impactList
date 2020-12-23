@@ -67,8 +67,6 @@ function separate() {
     let newVal = val.replace(/,/gm, ";");
     document.getElementById("txtRes").value = newVal;
 
-  } else {
-
   }
 
 }
@@ -88,4 +86,46 @@ function separate2() {
   } else {
     console.log(sep);
   }
+}
+
+function report() {
+  let val = document.getElementById("report").value;
+  let arr = val.split("\n");
+  let badArr = [];
+
+  if (val.length === 12) {
+    document.getElementById("reportRes").value = "No input";
+
+  } else {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].length === 8) {
+        badArr.push(parseInt(arr[i].substring(7)));
+      } else {
+        badArr.push(parseInt(arr[i].substring(7)));
+      }
+
+    }
+
+    let filteredArr = badArr.filter(item => item || item === 0);
+
+    let d = new Date();
+    let date = d.toLocaleDateString("id-ID", {
+      "dateStyle": "medium"
+    });
+    let time = d.toLocaleTimeString("id-ID", {
+      "timeStyle": "short"
+    });
+
+    document.getElementById("reportRes").value = "**Reporting OSO, TANGGAL: " + date + " Pukul " + time + " WIB :**" + "\n" + "\n" + "**Tiket Service Tsel:**" + "\n" + "TREGx: <4Jam / >4Jam" + "\n" + "TREG1: " + filteredArr[1] + "/" + filteredArr[9] + "\n" + "TREG2: " + filteredArr[2] + "/" + filteredArr[10] + "\n" + "TREG3: " + filteredArr[3] + "/" + filteredArr[11] + "\n" + "TREG4: " + filteredArr[4] + "/" + filteredArr[12] + "\n" + "TREG5: " + filteredArr[5] + "/" + filteredArr[13] + "\n" + "TREG6: " + filteredArr[6] + "/" + filteredArr[14] + "\n" + "TREG7: " + filteredArr[7] + "/" + filteredArr[15] + "\n" + "**Total: " + filteredArr[8] + "/" + filteredArr[16] + "**" + "\n" + "\n" + "**Total Tiket Tsel " + (filteredArr[17] + filteredArr[8] + filteredArr[16]) + " Tiket : Terdiri dari (SALSIM : " + filteredArr[17] + " Tiket ; ONPROGRESS : " + (filteredArr[8] + filteredArr[16]) + " Tiket)**";
+
+  }
+
+
+
+
+
+
+
+
+
 }

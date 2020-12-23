@@ -46,11 +46,23 @@
     <option value=",">Comma (,)</option>
     <option value=";">Semicolon (;)</option>
   </select>
+  <br>
+  <br>
+  <label for="reporting">Reporting OSO</label>
+  <textarea id="report" name="reporting" rows="8" cols="80">&#13;&#10;SALSIM:&nbsp;
+  </textarea>
+  <br>
+  <button type="button" name="button" onclick="report();">Submit</button>
+  <br>
+  <br>
+  <label for="reportRes">Result:</label>
+  <br>
+  <textarea id="reportRes" name="reportRes" rows="8" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
 
 
 
 
-
+<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
 </body>
 
 </html>
