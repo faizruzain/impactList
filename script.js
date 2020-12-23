@@ -68,7 +68,7 @@ function separate() {
     document.getElementById("txtRes").value = newVal;
 
   } else {
-    console.log(sep);
+
   }
 
 }
@@ -80,14 +80,10 @@ function separate2() {
   if (sep === ",") {
     let newVal = val.replace(/;/gm, ",");
     document.getElementById("fixRes").value = newVal;
-    console.log(val);
-    console.log(sep);
 
   } else if (sep === ";") {
     let newVal = val.replace(/,/gm, ";");
     document.getElementById("fixRes").value = newVal;
-    console.log(val);
-    console.log(sep);
 
   } else {
     console.log(sep);
