@@ -57,29 +57,20 @@ function fix() {
 
 function separate() {
   let val = document.getElementById("txtRes").value;
-
   let sep = document.getElementById("slct").value;
 
-  if (document.querySelectorAll("select")[0].getAttribute("name") === "select") {
-    if (sep === ",") {
-      let newVal = val.replace(/;/gm, ",");
-      document.getElementById("txtRes").value = newVal;
-      console.log(val);
-      console.log(sep);
+  if (sep === ",") {
+    let newVal = val.replace(/;/gm, ",");
+    document.getElementById("txtRes").value = newVal;
 
-    } else if (sep === ";") {
-      let newVal = val.replace(/,/gm, ";");
-      document.getElementById("txtRes").value = newVal;
-      console.log(val);
-      console.log(sep);
+  } else if (sep === ";") {
+    let newVal = val.replace(/,/gm, ";");
+    document.getElementById("txtRes").value = newVal;
 
-    } else {
-      console.log(sep);
-    }
-
-  } else if (document.querySelectorAll("select")[1].getAttribute("name") === "select2") {
-
+  } else {
+    console.log(sep);
   }
+
 }
 
 function separate2() {
