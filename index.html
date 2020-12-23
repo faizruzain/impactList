@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>NodeB</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="script.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+  <label for="impact">Impact:</label>
+  <br>
+  <!-- <input type="text" name="impact" value=""> -->
+  <textarea id="txt" name="impact" rows="8" cols="80"></textarea>
+  <br>
+  <button type="button" name="button" onclick="getVal();">Submit</button>
+  <br>
+  <br>
+  <label for="result">Result:</label>
+  <br>
+  <textarea id="txtRes" name="result" rows="11" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+  <br>
+  <label for="select">Separate with: </label>
+  <select id="slct" name="select" onchange="separate();">
+    <option value=",">Comma (,)</option>
+    <option value=";">Semicolon (;)</option>
+  </select>
+  <br>
+  <br>
+  <label for="fix">Get Site_ID from Left:</label>
+  <br>
+  <textarea id="fix" name="fix" rows="8" cols="80"></textarea>
+  <br>
+  <button type="button" name="button" onclick="fix();">Get</button>
+  <br>
+  <br>
+  <label for="fixRes">Result:</label>
+  <br>
+  <textarea id="fixRes" name="fixRes" rows="8" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+  <br>
+  <label for="select2">Separate with: </label>
+  <select id="slct2" name="select2" onchange="separate2();">
+    <option value=",">Comma (,)</option>
+    <option value=";">Semicolon (;)</option>
+  </select>
+
+
+
+
+
+</body>
+
+</html>
