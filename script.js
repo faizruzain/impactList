@@ -93,7 +93,7 @@ function report() {
   let arr = val.split("\n");
   let badArr = [];
 
-  if (val.length === 12) {
+  if (val.length === 9) {
     document.getElementById("reportRes").value = "No input";
 
   } else {
@@ -119,6 +119,28 @@ function report() {
     document.getElementById("reportRes").value = "**Reporting OSO, TANGGAL: " + date + " Pukul " + time + " WIB :**" + "\n" + "\n" + "**Tiket Service Tsel:**" + "\n" + "TREGx: <4Jam / >4Jam" + "\n" + "TREG1: " + filteredArr[1] + "/" + filteredArr[9] + "\n" + "TREG2: " + filteredArr[2] + "/" + filteredArr[10] + "\n" + "TREG3: " + filteredArr[3] + "/" + filteredArr[11] + "\n" + "TREG4: " + filteredArr[4] + "/" + filteredArr[12] + "\n" + "TREG5: " + filteredArr[5] + "/" + filteredArr[13] + "\n" + "TREG6: " + filteredArr[6] + "/" + filteredArr[14] + "\n" + "TREG7: " + filteredArr[7] + "/" + filteredArr[15] + "\n" + "**Total: " + filteredArr[8] + "/" + filteredArr[16] + "**" + "\n" + "\n" + "**Total Tiket Tsel " + (filteredArr[17] + filteredArr[8] + filteredArr[16]) + " Tiket : Terdiri dari (SALSIM : " + filteredArr[17] + " Tiket ; ONPROGRESS : " + (filteredArr[8] + filteredArr[16]) + " Tiket)**";
 
   }
+
+}
+
+function radio() {
+  let val = document.getElementById("radio").value;
+  console.log(val);
+  let arr = val.split("\n");
+  console.log(arr);
+  let newArr = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    newArr.push(arr[i].replace(/\t/g, ""));
+  }
+
+  console.log(newArr);
+
+  document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nosaa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + newArr[0] + " : " + newArr[1] + "\n" + newArr[4] + "          : " + newArr[5] + "\n" + newArr[8] + "   : " + newArr[9] + "\n" + newArr[12] + "       : " + newArr[13] + "\n" + newArr[16] + "     : " + newArr[17] + "\n" + newArr[20] + " : " + newArr[21] + "\n" + "\n" + newArr[2] + " : " + newArr[3] + "\n" + newArr[6] + "          : " + newArr[7] + "\n" + newArr[10] + "   : " + newArr[11] + "\n" + newArr[14] + "       : " + newArr[15] + "\n" + newArr[18] + "     : " + newArr[19] + "\n" + newArr[22] + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : " ;
+
+
+
+
+
 
 
 
