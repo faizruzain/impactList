@@ -137,17 +137,38 @@ function radio() {
 
   document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nosaa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + newArr[0] + " : " + newArr[1] + "\n" + newArr[4] + "          : " + newArr[5] + "\n" + newArr[8] + "   : " + newArr[9] + "\n" + newArr[12] + "       : " + newArr[13] + "\n" + newArr[16] + "     : " + newArr[17] + "\n" + newArr[20] + " : " + newArr[21] + "\n" + "\n" + newArr[2] + " : " + newArr[3] + "\n" + newArr[6] + "          : " + newArr[7] + "\n" + newArr[10] + "   : " + newArr[11] + "\n" + newArr[14] + "       : " + newArr[15] + "\n" + newArr[18] + "     : " + newArr[19] + "\n" + newArr[22] + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : " ;
 
+}
 
+function getMid() {
+  let val = document.getElementById("mid").value;
+  let start = document.getElementById("input1").value;
+  let end = document.getElementById("input2").value;
 
+  let arr = val.split("\n");
+  let newArr = [];
 
+  for (var i = 0; i < arr.length; i++) {
+    newArr.push(arr[i].substring(start, end));
+  }
 
+  document.getElementById("resultMid").value = "Jumlah Site:" + newArr.length + "\n" + "2G:" + newArr.length + "NE" + "\n" + "3G:" + newArr.length + "NE" + "\n" + "4G:" + newArr.length + "NE" + "\n" + "Affected Site(s):" + "\n" + newArr;
 
+}
 
+function separate3() {
+  let val = document.getElementById("resultMid").value;
+  let sep = document.getElementById("slct3").value;
 
+  if (sep === ",") {
+    let newVal = val.replace(/;/gm, ",");
+    document.getElementById("resultMid").value = newVal;
 
+  } else if (sep === ";") {
+    let newVal = val.replace(/,/gm, ";");
+    document.getElementById("resultMid").value = newVal;
 
-
-
-
+  } else {
+    console.log(sep);
+  }
 
 }

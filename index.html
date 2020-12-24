@@ -31,8 +31,7 @@
       <textarea class="form-control" id="txt" name="impact" rows="8" cols="100" placeholder="Ex: PLI136,PLI080,PLI023 &#10;or: PLI136;PLI080;PLI023"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="getVal();">Submit</button>
       <br>
-      <br
-      <label for="result">Result:</label>
+      <br <label for="result">Result:</label>
       <br>
       <textarea class="form-control" id="txtRes" name="result" rows="11" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
 
@@ -56,6 +55,47 @@
 
       <label for="select2">Separate with: </label>
       <select class="form-select" id="slct2" name="select2" onchange="separate2();">
+        <option value=""></option>
+        <option value=",">Comma (,)</option>
+        <option value=";">Semicolon (;)</option>
+      </select>
+      <br>
+
+
+      <label for="">Get Site_ID from Mid:</label>
+      <br>
+      <textarea class="form-control" id="mid" name="name" rows="8" cols="80"></textarea>
+
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="">Start: </label>
+        </div>
+        <div class="col-auto">
+          <input id="input1" type="text" name="1">
+        </div>
+        <div class="col-auto">
+          <label for="">End: </label>
+        </div>
+        <div class="col-auto">
+          <input id="input2" type="text" name="2">
+        </div>
+        <div class="col-auto">
+          <span id="passwordHelpInline" class="form-text">
+            First character is at index 0.
+          </span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="button" name="button" onclick="getMid();">Get</button>
+
+      <br>
+      <br>
+
+      <label for="resultMid">Result:</label>
+      <textarea id="resultMid" class="form-control" id="resultMid" name="resultMid" rows="8" cols="80"></textarea>
+
+      <label for="slct3">Separate with: </label>
+      <select class="form-select" id="slct3" name="slct3" onchange="separate3();">
         <option value=""></option>
         <option value=",">Comma (,)</option>
         <option value=";">Semicolon (;)</option>
