@@ -8,7 +8,7 @@
   padding-bottom: 2%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .tabAing {
     /* width: 50%; */
     margin-left: 1%;
@@ -36,4 +36,8 @@ button {
 
 ul {
   margin-top: 10px;
+}
+
+#datek {
+  height: 300px !important;
 }
