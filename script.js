@@ -126,18 +126,14 @@ function report() {
 
 function radio() {
   let val = document.getElementById("radio").value;
-  console.log(val);
   let arr = val.split("\n");
-  console.log(arr);
   let newArr = [];
 
   for (var i = 0; i < arr.length; i++) {
     newArr.push(arr[i].replace(/\t/g, ""));
   }
 
-  console.log(newArr);
-
-  document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nosaa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "          : " + newArr[5] + "\n" + "NE SITE NAME" + "   : " + newArr[9] + "\n" + "NE ALAMAT" + "       : " + newArr[13] + "\n" + "NE LATITUDE" + "     : " + newArr[17] + "\n" + "NE LONGITUDE" + " : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "          : " + newArr[7] + "\n" + "FE SITE NAME" + "   : " + newArr[11] + "\n" + "FE ALAMAT" + "       : " + newArr[15] + "\n" + "FE LATITUDE" + "     : " + newArr[19] + "\n" + "FE LONGITUDE" + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : " ;
+  document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "          : " + newArr[5] + "\n" + "NE SITE NAME" + "   : " + newArr[9] + "\n" + "NE ALAMAT" + "       : " + newArr[13] + "\n" + "NE LATITUDE" + "     : " + newArr[17] + "\n" + "NE LONGITUDE" + " : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "          : " + newArr[7] + "\n" + "FE SITE NAME" + "   : " + newArr[11] + "\n" + "FE ALAMAT" + "       : " + newArr[15] + "\n" + "FE LATITUDE" + "     : " + newArr[19] + "\n" + "FE LONGITUDE" + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : " ;
 
 }
 
