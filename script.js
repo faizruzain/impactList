@@ -41,7 +41,7 @@ function fix() {
       sites_ID.push(arr[i].slice(0, 6));
     }
 
-    sites_ID = sites_ID.filter(item => item);
+    sites_ID = sites_ID.filter(item => !item.match(/[\s\Wa-z]/g) && item);
 
     document.getElementById("fixRes").value = "Jumlah Site:" + sites_ID.length + "\n" + "2G:" + sites_ID.length + "NE" + "\n" + "3G:" + sites_ID.length + "NE" + "\n" + "4G:" + sites_ID.length + "NE" + "\n" + "Affected Site(s):" + "\n" + sites_ID;
 
@@ -149,7 +149,7 @@ function getMid() {
     newArr.push(arr[i].substring(start, end));
   }
 
-  newArr = newArr.filter(item => item);
+  newArr = newArr.filter(item => !item.match(/[\s\Wa-z]/g) && item);
 
   document.getElementById("resultMid").value = "Jumlah Site:" + newArr.length + "\n" + "2G:" + newArr.length + "NE" + "\n" + "3G:" + newArr.length + "NE" + "\n" + "4G:" + newArr.length + "NE" + "\n" + "Affected Site(s):" + "\n" + newArr;
 
