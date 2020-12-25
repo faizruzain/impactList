@@ -24,6 +24,8 @@
   </ul>
 
   <div class="tab-content" id="myTabContent">
+
+    <!-- Impact Tab -->
     <div class="tab-pane fade show active tabAing" id="home" role="tabpanel" aria-labelledby="fo-tab">
 
       <label for="impact">Impact:</label>
@@ -41,6 +43,20 @@
         <option value=",">Comma (,)</option>
         <option value=";">Semicolon (;)</option>
       </select>
+      <!-- <div class="myRadio">
+
+        <label>Separate with : </label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="," onclick="separate();">
+          <label class="form-check-label" for="inlineRadio1">Comma (,)</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=";" onclick="separate();">
+          <label class="form-check-label" for="inlineRadio2">Semicolon (;)</label>
+        </div>
+
+      </div> -->
+
       <br>
       <label for="fix">Get Site_ID from Left:</label>
       <br>
@@ -64,7 +80,7 @@
 
       <label for="">Get Site_ID from Mid:</label>
       <br>
-      <textarea class="form-control" id="mid" name="name" rows="8" cols="80"></textarea>
+      <textarea class="form-control" id="mid" name="name" rows="8" cols="80" placeholder="Ex:&#10;(B) E_RGT308WD_SMA_NEGERI_1_KELAYANG*&#10;(S) E_RGT100WT_TALANG_PRING_JAYA*&#10;(G) E_RGT591WX_Kelayang*&#10;"></textarea>
 
       <div class="row g-3 align-items-center">
         <div class="col-auto">
@@ -92,7 +108,7 @@
       <br>
 
       <label for="resultMid">Result:</label>
-      <textarea id="resultMid" class="form-control" id="resultMid" name="resultMid" rows="8" cols="80"></textarea>
+      <textarea id="resultMid" class="form-control" id="resultMid" name="resultMid" rows="8" cols="80" onclick="this.focus();this.select()" readonly="readonly"></textarea>
 
       <label for="slct3">Separate with: </label>
       <select class="form-select" id="slct3" name="slct3" onchange="separate3();">
@@ -102,6 +118,8 @@
       </select>
 
     </div>
+
+    <!-- Radio Tab -->
     <div class="tab-pane fade tabAing" id="profile" role="tabpanel" aria-labelledby="radio-tab">
 
       <label for="datek">Datek Radio:</label>
@@ -115,6 +133,8 @@
       <textarea class="form-control" id="datek" name="datek" rows="8" cols="80"></textarea>
 
     </div>
+
+    <!-- Reporting OSO Tab -->
     <div class="tab-pane fade tabAing" id="contact" role="tabpanel" aria-labelledby="reportingoso-tab">
 
       <label for="reporting">Reporting OSO</label>

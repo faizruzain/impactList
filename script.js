@@ -58,6 +58,8 @@ function fix() {
 function separate() {
   let val = document.getElementById("txtRes").value;
   let sep = document.getElementById("slct").value;
+  // let sep = document.querySelectorAll("#inlineRadio1, #inlineRadio2")[0].getAttribute("id");
+
 
   if (sep === ",") {
     let newVal = val.replace(/;/gm, ",");
@@ -135,7 +137,7 @@ function radio() {
 
   console.log(newArr);
 
-  document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nosaa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + newArr[0] + " : " + newArr[1] + "\n" + newArr[4] + "          : " + newArr[5] + "\n" + newArr[8] + "   : " + newArr[9] + "\n" + newArr[12] + "       : " + newArr[13] + "\n" + newArr[16] + "     : " + newArr[17] + "\n" + newArr[20] + " : " + newArr[21] + "\n" + "\n" + newArr[2] + " : " + newArr[3] + "\n" + newArr[6] + "          : " + newArr[7] + "\n" + newArr[10] + "   : " + newArr[11] + "\n" + newArr[14] + "       : " + newArr[15] + "\n" + newArr[18] + "     : " + newArr[19] + "\n" + newArr[22] + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : " ;
+  document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nosaa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "          : " + newArr[5] + "\n" + "NE SITE NAME" + "   : " + newArr[9] + "\n" + "NE ALAMAT" + "       : " + newArr[13] + "\n" + "NE LATITUDE" + "     : " + newArr[17] + "\n" + "NE LONGITUDE" + " : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "          : " + newArr[7] + "\n" + "FE SITE NAME" + "   : " + newArr[11] + "\n" + "FE ALAMAT" + "       : " + newArr[15] + "\n" + "FE LATITUDE" + "     : " + newArr[19] + "\n" + "FE LONGITUDE" + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : " ;
 
 }
 
@@ -150,6 +152,8 @@ function getMid() {
   for (var i = 0; i < arr.length; i++) {
     newArr.push(arr[i].substring(start, end));
   }
+
+  newArr = newArr.filter(item => item);
 
   document.getElementById("resultMid").value = "Jumlah Site:" + newArr.length + "\n" + "2G:" + newArr.length + "NE" + "\n" + "3G:" + newArr.length + "NE" + "\n" + "4G:" + newArr.length + "NE" + "\n" + "Affected Site(s):" + "\n" + newArr;
 
