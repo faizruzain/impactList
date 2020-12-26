@@ -146,10 +146,12 @@ function radio() {
 
 function getMid() {
   let val = document.getElementById("mid").value;
-  val = val.toUpperCase();
+      val = val.toUpperCase();
   let start = document.getElementById("input1").value;
+      start = parseInt(start) - 1;
+      console.log(start);
   let end = document.getElementById("input2").value;
-
+      end = parseInt(end) - 1;
   let arr = val.split("\n");
   let newArr = [];
 
