@@ -1,17 +1,19 @@
 function getVal() {
   let res;
   let val = document.getElementById("txt").value;
+  val = val.replace(/\s/g, "");
+  val = val.toUpperCase();
 
   if (/;/g.test(val) === true) {
     res = val.split(";");
     if (Array.isArray(res) === true) {
-      setImpact(res);
+      document.getElementById("txtRes").value = setImpact(res);
     }
 
   } else if (/,/g.test(val) === true) {
     res = val.split(",");
     if (Array.isArray(res) === true) {
-      setImpact(res);
+      document.getElementById("txtRes").value = setImpact(res);
     }
 
   } else if (!val) {
@@ -25,13 +27,16 @@ function getVal() {
 }
 
 function setImpact(res) {
-  let val = document.getElementById("txt").value;
-  document.getElementById("txtRes").value = "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Affected Site(s):" + "\n" + val;
+  // let val = document.getElementById("txt").value;
+  // document.getElementById("txtRes").value = "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Affected Site(s):" + "\n" + res;
+
+  return "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Affected Site(s):" + "\n" + res;
 
 }
 
 function fix() {
   let val = document.getElementById("fix").value;
+  val = val.toUpperCase();
 
   if (/\s/g.test(val) === true) {
     let arr = val.split("\n");
@@ -41,9 +46,11 @@ function fix() {
       sites_ID.push(arr[i].slice(0, 6));
     }
 
-    sites_ID = sites_ID.filter(item => !item.match(/[\s\Wa-z]/g) && item);
+    sites_ID = sites_ID.filter(item => !item.match(/[\s\W_]/g) && item);
 
-    document.getElementById("fixRes").value = "Jumlah Site:" + sites_ID.length + "\n" + "2G:" + sites_ID.length + "NE" + "\n" + "3G:" + sites_ID.length + "NE" + "\n" + "4G:" + sites_ID.length + "NE" + "\n" + "Affected Site(s):" + "\n" + sites_ID;
+    // document.getElementById("fixRes").value = "Jumlah Site:" + sites_ID.length + "\n" + "2G:" + sites_ID.length + "NE" + "\n" + "3G:" + sites_ID.length + "NE" + "\n" + "4G:" + sites_ID.length + "NE" + "\n" + "Affected Site(s):" + "\n" + sites_ID;
+
+    document.getElementById("fixRes").value = setImpact(sites_ID);
 
   } else if (!val) {
     document.getElementById("fixRes").value = "No input";
@@ -139,6 +146,7 @@ function radio() {
 
 function getMid() {
   let val = document.getElementById("mid").value;
+  val = val.toUpperCase();
   let start = document.getElementById("input1").value;
   let end = document.getElementById("input2").value;
 
@@ -149,7 +157,7 @@ function getMid() {
     newArr.push(arr[i].substring(start, end));
   }
 
-  newArr = newArr.filter(item => !item.match(/[\s\Wa-z]/g) && item);
+  newArr = newArr.filter(item => !item.match(/[\s\W_]/g) && item);
 
   document.getElementById("resultMid").value = "Jumlah Site:" + newArr.length + "\n" + "2G:" + newArr.length + "NE" + "\n" + "3G:" + newArr.length + "NE" + "\n" + "4G:" + newArr.length + "NE" + "\n" + "Affected Site(s):" + "\n" + newArr;
 
