@@ -30,12 +30,12 @@
 
       <label for="impact">Impact:</label>
       <br>
-      <textarea class="form-control" id="txt" name="impact" rows="8" cols="100" placeholder="Ex: PLI136,PLI080,PLI023 &#10;or: PLI136;PLI080;PLI023"></textarea>
+      <textarea class="form-control" id="txt" name="impact" rows="8" cols="80" placeholder="Ex: PLI136,PLI080,PLI023 &#10;or: PLI136;PLI080;PLI023"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="getVal();">Submit</button>
       <br>
       <br <label for="result">Result:</label>
       <br>
-      <textarea class="form-control" id="txtRes" name="result" rows="11" cols="80"  ></textarea>
+      <textarea class="form-control" id="txtRes" name="result" rows="8" cols="80"  ></textarea>
 
       <label for="select">Separate with: </label>
       <select class="form-select" id="slct" name="select" onchange="separate();">
@@ -58,10 +58,10 @@
       </div> -->
 
       <br>
-      <label for="fix">Get Site_ID from Left:</label>
+      <label for="fix">Site ID Parser:</label>
       <br>
-      <textarea class="form-control" id="fix" name="fix" rows="8" cols="80" placeholder="Ex:&#10;BKO023MW1_TSEL_Pamenang2&#10;SRJ004MW1_TSEL_TanjungSarolangun&#10;SRJ005MW1_TSEL_Sarolangun3&#10;or:&#10;MDU066&#10;MDU110&#10;MDU195"></textarea>
-      <button class="btn btn-primary" type="button" name="button" onclick="fix();">Get</button>
+      <textarea class="form-control" id="fix" name="fix" rows="8" cols="80" placeholder="Ex:&#10;BKO023MW1_TSEL_Pamenang2&#10;N_GTO184MM1_DMT ISAT Tapa&#10;(S) E-RGT504MM1-SIMPANG-KOTA-MEDAN*"></textarea>
+      <button class="btn btn-primary" type="button" name="button" onclick="parse();">Psrse</button>
       <br>
       <br>
       <label for="fixRes">Result:</label>
@@ -75,46 +75,6 @@
         <option value=";">Semicolon (;)</option>
       </select>
       <br>
-
-
-      <label for="">Get Site_ID from Mid:</label>
-      <br>
-      <textarea class="form-control" id="mid" name="name" rows="8" cols="80" placeholder="Ex:&#10;(B) E_RGT308WD_SMA_NEGERI_1_KELAYANG*&#10;(S) E_RGT100WT_TALANG_PRING_JAYA*&#10;(G) E_RGT591WX_Kelayang*&#10;"></textarea>
-
-      <div class="row g-3 align-items-center">
-        <div class="col-auto">
-          <label for="">Start: </label>
-        </div>
-        <div class="col-auto">
-          <input id="input1" type="text" name="1">
-        </div>
-        <div class="col-auto">
-          <label for="">End: </label>
-        </div>
-        <div class="col-auto">
-          <input id="input2" type="text" name="2">
-        </div>
-        <div class="col-auto">
-          <span id="passwordHelpInline" class="form-text">
-            First character is at index 1.
-          </span>
-        </div>
-      </div>
-
-      <button class="btn btn-primary" type="button" name="button" onclick="getMid();">Get</button>
-
-      <br>
-      <br>
-
-      <label for="resultMid">Result:</label>
-      <textarea id="resultMid" class="form-control" id="resultMid" name="resultMid" rows="8" cols="80"  ></textarea>
-
-      <label for="slct3">Separate with: </label>
-      <select class="form-select" id="slct3" name="slct3" onchange="separate3();">
-        <option value=""></option>
-        <option value=",">Comma (,)</option>
-        <option value=";">Semicolon (;)</option>
-      </select>
 
     </div>
 

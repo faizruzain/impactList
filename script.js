@@ -27,36 +27,25 @@ function getVal() {
 }
 
 function setImpact(res) {
-  // let val = document.getElementById("txt").value;
-  // document.getElementById("txtRes").value = "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Affected Site(s):" + "\n" + res;
-
   return "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Affected Site(s):" + "\n" + res;
 
 }
 
-function fix() {
+function parse() {
   let val = document.getElementById("fix").value;
-  val = val.toUpperCase();
 
-  if (/\s/g.test(val) === true) {
-    let arr = val.split("\n");
-
-    let sites_ID = [];
-    for (var i = 0; i < arr.length; i++) {
-      sites_ID.push(arr[i].slice(0, 6));
-    }
-
-    sites_ID = sites_ID.filter(item => !item.match(/[\s\W_]/g) && item);
-
-    // document.getElementById("fixRes").value = "Jumlah Site:" + sites_ID.length + "\n" + "2G:" + sites_ID.length + "NE" + "\n" + "3G:" + sites_ID.length + "NE" + "\n" + "4G:" + sites_ID.length + "NE" + "\n" + "Affected Site(s):" + "\n" + sites_ID;
-
-    document.getElementById("fixRes").value = setImpact(sites_ID);
-
-  } else if (!val) {
+  if (!val) {
     document.getElementById("fixRes").value = "No input";
 
-  } else if (/\s/g.test(val) === false) {
-    document.getElementById("fixRes").value = "Jumlah Site:1" + "\n" + "2G:1" + "NE" + "\n" + "3G:1" + "NE" + "\n" + "4G:1" + "NE" + "\n" + "Detail Site:" + "\n" + val.slice(0, 6);
+  } else {
+    val = val.toUpperCase();
+    val = val.split("\n");
+    let sites_ID = [];
+    for (var i = 0; i < val.length; i++) {
+      sites_ID.push(val[i].match(/[A-Z]{3}\d{3}/g));
+    };
+    sites_ID = sites_ID.filter(item => item);
+    document.getElementById("fixRes").value = setImpact(sites_ID);
 
   }
 
@@ -65,8 +54,6 @@ function fix() {
 function separate() {
   let val = document.getElementById("txtRes").value;
   let sep = document.getElementById("slct").value;
-  // let sep = document.querySelectorAll("#inlineRadio1, #inlineRadio2")[0].getAttribute("id");
-
 
   if (sep === ",") {
     let newVal = val.replace(/;/gm, ",");
@@ -140,28 +127,7 @@ function radio() {
     newArr.push(arr[i].replace(/\t/g, ""));
   }
 
-  document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "          : " + newArr[5] + "\n" + "NE SITE NAME" + "   : " + newArr[9] + "\n" + "NE ALAMAT" + "       : " + newArr[13] + "\n" + "NE LATITUDE" + "     : " + newArr[17] + "\n" + "NE LONGITUDE" + " : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "          : " + newArr[7] + "\n" + "FE SITE NAME" + "   : " + newArr[11] + "\n" + "FE ALAMAT" + "       : " + newArr[15] + "\n" + "FE LATITUDE" + "     : " + newArr[19] + "\n" + "FE LONGITUDE" + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : " ;
-
-}
-
-function getMid() {
-  let val = document.getElementById("mid").value;
-      val = val.toUpperCase();
-  let start = document.getElementById("input1").value;
-      start = parseInt(start) - 1;
-      console.log(start);
-  let end = document.getElementById("input2").value;
-      end = parseInt(end) - 1;
-  let arr = val.split("\n");
-  let newArr = [];
-
-  for (var i = 0; i < arr.length; i++) {
-    newArr.push(arr[i].substring(start, end));
-  }
-
-  newArr = newArr.filter(item => !item.match(/[\s\W_]/g) && item);
-
-  document.getElementById("resultMid").value = "Jumlah Site:" + newArr.length + "\n" + "2G:" + newArr.length + "NE" + "\n" + "3G:" + newArr.length + "NE" + "\n" + "4G:" + newArr.length + "NE" + "\n" + "Affected Site(s):" + "\n" + newArr;
+  document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa    : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR     : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status   : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "          : " + newArr[5] + "\n" + "NE SITE NAME" + "   : " + newArr[9] + "\n" + "NE ALAMAT" + "       : " + newArr[13] + "\n" + "NE LATITUDE" + "     : " + newArr[17] + "\n" + "NE LONGITUDE" + " : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "          : " + newArr[7] + "\n" + "FE SITE NAME" + "   : " + newArr[11] + "\n" + "FE ALAMAT" + "       : " + newArr[15] + "\n" + "FE LATITUDE" + "     : " + newArr[19] + "\n" + "FE LONGITUDE" + " : " + newArr[23] + "\n" + "\n" + "#Info        : Power aman." + "\n" + "#Action    : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
 
 }
 
