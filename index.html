@@ -32,10 +32,11 @@
       <br>
       <textarea class="form-control" id="txt" name="impact" rows="8" cols="80" placeholder="Ex: PLI136,PLI080,PLI023 &#10;or: PLI136;PLI080;PLI023"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="getVal();">Submit</button>
+      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('txt').getAttribute('id'));">Reset</button>
       <br>
       <br <label for="result">Result:</label>
       <br>
-      <textarea class="form-control" id="txtRes" name="result" rows="8" cols="80"  ></textarea>
+      <textarea class="form-control" id="txtRes" name="result" rows="8" cols="80"></textarea>
 
       <label for="select">Separate with: </label>
       <select class="form-select" id="slct" name="select" onchange="separate();">
@@ -62,11 +63,12 @@
       <br>
       <textarea class="form-control" id="fix" name="fix" rows="8" cols="80" placeholder="Ex:&#10;BKO023MW1_TSEL_Pamenang2&#10;N_GTO184MM1_DMT ISAT Tapa&#10;(S) E-RGT504MM1-SIMPANG-KOTA-MEDAN*"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="parse();">Psrse</button>
+      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('fix').getAttribute('id'));">Reset</button>
       <br>
       <br>
       <label for="fixRes">Result:</label>
       <br>
-      <textarea class="form-control" id="fixRes" name="fixRes" rows="8" cols="80"  ></textarea>
+      <textarea class="form-control" id="fixRes" name="fixRes" rows="8" cols="80"></textarea>
 
       <label for="select2">Separate with: </label>
       <select class="form-select" id="slct2" name="select2" onchange="separate2();">
@@ -85,6 +87,7 @@
       <br>
       <textarea id="radio" class="form-control" name="datekRadio" rows="8" cols="80"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="radio();">Submit</button>
+      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('radio').getAttribute('id'));">Reset</button>
       <br>
       <br>
       <label for="datek">Result:</label>
@@ -101,6 +104,7 @@
       <textarea class="form-control" id="report" name="reporting" rows="8" cols="80">&#13;&#10;SALSIM:&nbsp;</textarea>
 
       <button class="btn btn-primary" type="button" name="button" onclick="report();">Submit</button>
+      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('report').getAttribute('id'));">Reset</button>
       <br>
       <br>
       <label for="reportRes">Result:</label>

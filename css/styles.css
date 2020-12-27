@@ -23,6 +23,10 @@
     resize: both;
     overflow: auto;
   }
+
+  #datek, #reportRes {
+    height: 330px !important;
+  }
 }
 
 button {
@@ -38,8 +42,8 @@ ul {
   margin-top: 10px;
 }
 
-#datek {
-  height: 300px !important;
+#datek, #reportRes {
+  height: 330px !important;
 }
 
 input {
