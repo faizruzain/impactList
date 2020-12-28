@@ -94,6 +94,23 @@
       <br>
       <textarea class="form-control" id="datek" name="datek" rows="8" cols="80"></textarea>
 
+      <div class="myRadio">
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="rad" id="inlineRadio1" value="dwn" onchange="radioService(document.getElementById('inlineRadio1').value);">
+          <label class="form-check-label" for="inlineRadio1">DOWN</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="rad" id="inlineRadio2" value="pl" onchange="radioService(document.getElementById('inlineRadio2').value);">
+          <label class="form-check-label" for="inlineRadio2">PACKETLOSS</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="rad" id="inlineRadio3" value="fl" onchange="radioService(document.getElementById('inlineRadio3').value);">
+          <label class="form-check-label" for="inlineRadio3">FLICKER</label>
+        </div>
+
+      </div>
+
     </div>
 
     <!-- Reporting OSO Tab -->

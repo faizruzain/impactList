@@ -46,12 +46,6 @@ ul {
   height: 330px !important;
 }
 
-input {
-  margin-top: 7px;
-  width: 25px !important;
-  height: 25px;
+.myRadio {
+  text-align: center;
 }
-
-/* #txt, #fix, #mid {
-  text-transform: uppercase;
-} */
