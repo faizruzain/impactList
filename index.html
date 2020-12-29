@@ -25,37 +25,39 @@
     </li>
   </ul>
 
-  <div class="tab-content tabAing" id="myTabContent">
+  <div class="tab-content container-xl custom" id="myTabContent">
 
-    <!-- Impact Tab -->
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="fo-tab">
+      <!-- Impact Tab -->
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="fo-tab">
 
-      <label for="fix">Site ID Counter:</label>
-      <br>
-      <textarea class="form-control" id="fix" name="fix" rows="8" cols="80" placeholder="Ex:&#10;GTO193&#10;GTO193,GTO194,GTO184&#10;GTO193;GTO194;GTO184&#10;BKO023MW1_TSEL_Pamenang2&#10;N_GTO184MM1_DMT ISAT Tapa&#10;(S) E-RGT504MM1-SIMPANG-KOTA-MEDAN*"></textarea>
-      <button class="btn btn-primary" type="button" name="button" onclick="parse();">Count</button>
-      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('fix').getAttribute('id'));">Reset</button>
-      <br>
-      <br>
-      <label for="fixRes">Result:</label>
-      <br>
-      <textarea class="form-control" id="fixRes" name="fixRes" rows="8" cols="80"></textarea>
+        <label for="fix">Site ID Counter:</label>
+        <br>
+        <textarea class="form-control" id="fix" name="fix" rows="8" cols="80"
+          placeholder="Ex:&#10;GTO193&#10;GTO193,GTO194,GTO184&#10;GTO193;GTO194;GTO184&#10;BKO023MW1_TSEL_Pamenang2&#10;N_GTO184MM1_DMT ISAT Tapa&#10;(S) E-RGT504MM1-SIMPANG-KOTA-MEDAN*"></textarea>
+        <button class="btn btn-primary" type="button" name="button" onclick="parse();">Count</button>
+        <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('fix').getAttribute('id'));">Reset</button>
+        <br>
+        <br>
+        <label for="fixRes">Result:</label>
+        <br>
+        <textarea class="form-control" id="fixRes" name="fixRes" rows="8" cols="80"></textarea>
 
-      <div class="myRadio">
+        <div class="myRadio">
 
-        <label>Separate with : </label>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="," onchange="newSeparate(document.getElementById('inlineRadio6').getAttribute('id'));">
-          <label class="form-check-label" for="inlineRadio6">Semicolon ( ; )</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value=";" onchange="newSeparate(document.getElementById('inlineRadio7').getAttribute('id'));">
-          <label class="form-check-label" for="inlineRadio7">Comma ( , )</label>
+          <label>Separate with : </label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="," onchange="newSeparate(document.getElementById('inlineRadio6').getAttribute('id'));">
+            <label class="form-check-label" for="inlineRadio6">Semicolon ( ; )</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value=";" onchange="newSeparate(document.getElementById('inlineRadio7').getAttribute('id'));">
+            <label class="form-check-label" for="inlineRadio7">Comma ( , )</label>
+          </div>
+
         </div>
 
       </div>
 
-    </div>
 
     <!-- Radio Tab -->
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="radio-tab">

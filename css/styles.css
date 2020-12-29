@@ -1,75 +1,36 @@
-.tabAing {
-  margin-left: 27%;
-  margin-right: 27%;
-  padding-top: 1%;
-  padding-bottom: 2%;
-}
-
-@media (max-width: 550px) {
-  .tabAing {
-    width: 475px;
-    margin-left: 1%;
-    margin-right: 1%;
-    padding-left: 0%;
-    padding-right: 0%;
-  }
-
-  textarea {
-    width: 475px !important;
-    height: 200px;
-    resize: both;
-    overflow: auto;
-    font-size: 0.7rem;
-  }
-
-  #datek, #reportRes {
-    height: 330px !important;
-  }
-}
-
-@media (min-width: 551px) {
-  .tabAing {
-    margin-left: 15%;
-    margin-right: 15%;
-    padding-top: 1%;
-    padding-bottom: 2%;
-  }
-}
-
-button {
-  margin-top: 5px;
-}
-
-/* body {
-  background-image: url("F:/NGODING_GAESS/impactList/images/962887.jpg");
-  background-size: cover;
-} */
-
-ul {
-  margin-top: 10px;
-}
-
-#datek, #reportRes {
-  height: 330px !important;
-}
-
 .myRadio {
   text-align: center;
+  /* padding-top: 3px; */
+  padding-bottom: 10px;
 }
 
 body {
   font-family: 'Inconsolata', monospace;
-
 }
 
-label {
-  font-weight: bold;
-}
-
-a {
+label, a {
   font-weight: bold;
 }
 
 textarea {
-  font-size: 0.7rem;
+  height: 300px;
+  font-size: 1rem !important;
+  margin-bottom: 10px !important;
+}
+
+.custom {
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+}
+
+@media (max-width: 500px) {
+  .custom {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+  }
+
+}
+
+ul {
+  margin-bottom: 10px !important;
 }
