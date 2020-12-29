@@ -19,6 +19,7 @@
     height: 200px;
     resize: both;
     overflow: auto;
+    font-size: 0.7rem;
   }
 
   #datek, #reportRes {
@@ -67,4 +68,8 @@ label {
 
 a {
   font-weight: bold;
+}
+
+textarea {
+  font-size: 0.7rem;
 }

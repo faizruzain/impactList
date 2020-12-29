@@ -1,33 +1,3 @@
-function getVal() {
-  let res;
-  let val = document.getElementById("txt").value;
-  val = val.replace(/\s/g, "");
-  val = val.toUpperCase();
-
-  if (/;/g.test(val) === true) {
-    res = val.split(";");
-    if (Array.isArray(res) === true) {
-      document.getElementById("txtRes").value = setImpact(res);
-    }
-
-  } else if (/,/g.test(val) === true) {
-    res = val.split(",");
-    if (Array.isArray(res) === true) {
-      document.getElementById("txtRes").value = setImpact(res);
-    }
-
-  } else if (!val) {
-    document.getElementById("txtRes").value = "No input";
-
-  } else {
-    document.getElementById("txtRes").value = "Jumlah Site:1" + "\n" + "2G:1" + "NE" + "\n" + "3G:1" + "NE" + "\n" + "4G:1" + "NE" + "\n" + "Detail Site:" + "\n" + val;
-
-  }
-  document.getElementById("inlineRadio4").checked = false;
-  document.getElementById("inlineRadio5").checked = false;
-
-}
-
 function setImpact(res) {
   return "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Affected Site(s):" + "\n" + res;
 
@@ -39,21 +9,12 @@ function parse() {
   if (!val) {
     document.getElementById("fixRes").value = "No input";
 
-  } else if (/\n/.test(val) === false) {
+  } else {
     val = val.toUpperCase();
     document.getElementById("fixRes").value = setImpact(val.match(/[A-Z]{3}\d{3}/g));
 
-  } else {
-    val = val.toUpperCase();
-    val = val.split("\n");
-    let sites_ID = [];
-    for (var i = 0; i < val.length; i++) {
-      sites_ID.push(val[i].match(/[A-Z]{3}\d{3}/g));
-    };
-    sites_ID = sites_ID.filter(item => item);
-    document.getElementById("fixRes").value = setImpact(sites_ID);
-
   }
+
   document.getElementById("inlineRadio6").checked = false;
   document.getElementById("inlineRadio7").checked = false;
 
@@ -144,13 +105,7 @@ function radioService(service) {
 }
 
 function reset(id) {
-  if (id === "txt") {
-    document.getElementById("txt").value = "";
-    document.getElementById("txtRes").value = "";
-    document.getElementById("inlineRadio4").checked = false;
-    document.getElementById("inlineRadio5").checked = false;
-
-  } else if (id === "fix") {
+  if (id === "fix") {
     document.getElementById("fix").value = "";
     document.getElementById("fixRes").value = "";
     document.getElementById("inlineRadio6").checked = false;
@@ -193,18 +148,5 @@ function newSeparate(id) {
     document.getElementById("fixRes").value = val;
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
