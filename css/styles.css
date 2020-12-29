@@ -1,16 +1,13 @@
 .tabAing {
-  /* margin-left: 50%; */
-  margin: auto;
-  width: 50%;
+  margin-left: 27%;
+  margin-right: 27%;
   padding-top: 1%;
-  padding-left: 5%;
-  padding-right: 5%;
   padding-bottom: 2%;
 }
 
 @media (max-width: 550px) {
   .tabAing {
-    /* width: 50%; */
+    width: 475px;
     margin-left: 1%;
     margin-right: 1%;
     padding-left: 0%;
@@ -26,6 +23,15 @@
 
   #datek, #reportRes {
     height: 330px !important;
+  }
+}
+
+@media (min-width: 551px) {
+  .tabAing {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 1%;
+    padding-bottom: 2%;
   }
 }
 
@@ -48,4 +54,17 @@ ul {
 
 .myRadio {
   text-align: center;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+
+}
+
+label {
+  font-weight: bold;
+}
+
+a {
+  font-weight: bold;
 }
