@@ -55,52 +55,44 @@ function report() {
 }
 
 function radio() {
-  let val = document.getElementById("radio").value;
-  let arr = val.split("\n");
-  let newArr = [];
+  let val = document.getElementById("radio").value.replace(/\t/g, "").split("\n");
 
   if (!val) {
-    document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "    : " + newArr[5] + "\n" + "NE SITE NAME" + "  : " + newArr[9] + "\n" + "NE ALAMAT" + "     : " + newArr[13] + "\n" + "NE LATITUDE" + "   : " + newArr[17] + "\n" + "NE LONGITUDE" + "  : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "    : " + newArr[7] + "\n" + "FE SITE NAME" + "  : " + newArr[11] + "\n" + "FE ALAMAT" + "     : " + newArr[15] + "\n" + "FE LATITUDE" + "   : " + newArr[19] + "\n" + "FE LONGITUDE" + "  : " + newArr[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
+    document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
     document.getElementById("inlineRadio1").checked = false;
     document.getElementById("inlineRadio2").checked = false;
     document.getElementById("inlineRadio3").checked = false;
 
   } else {
-    for (var i = 0; i < arr.length; i++) {
-      newArr.push(arr[i].replace(/\t/g, ""));
-    }
-
-    document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "    : " + newArr[5] + "\n" + "NE SITE NAME" + "  : " + newArr[9] + "\n" + "NE ALAMAT" + "     : " + newArr[13] + "\n" + "NE LATITUDE" + "   : " + newArr[17] + "\n" + "NE LONGITUDE" + "  : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "    : " + newArr[7] + "\n" + "FE SITE NAME" + "  : " + newArr[11] + "\n" + "FE ALAMAT" + "     : " + newArr[15] + "\n" + "FE LATITUDE" + "   : " + newArr[19] + "\n" + "FE LONGITUDE" + "  : " + newArr[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
+    document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
     document.getElementById("inlineRadio1").checked = false;
     document.getElementById("inlineRadio2").checked = false;
     document.getElementById("inlineRadio3").checked = false;
 
   }
 
+  document.getElementById("datek").value = document.getElementById("datek").value.replace(/undefined/g, "");
+
 
 }
 
 function radioService(service) {
-  let val = document.getElementById("radio").value;
-  let arr = val.split("\n");
-  let newArr = [];
-
-  for (var i = 0; i < arr.length; i++) {
-    newArr.push(arr[i].replace(/\t/g, ""));
-  }
+  let val = document.getElementById("radio").value.replace(/\t/g, "").split("\n");
 
   if (val) {
     if (service === "dwn") {
-      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + newArr[5] + "_" + newArr[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_" + "TO" + "_" + newArr[7] + "_" + newArr[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_DOWN" + "_REGTSEL" + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "    : " + newArr[5] + "\n" + "NE SITE NAME" + "  : " + newArr[9] + "\n" + "NE ALAMAT" + "     : " + newArr[13] + "\n" + "NE LATITUDE" + "   : " + newArr[17] + "\n" + "NE LONGITUDE" + "  : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "    : " + newArr[7] + "\n" + "FE SITE NAME" + "  : " + newArr[11] + "\n" + "FE ALAMAT" + "     : " + newArr[15] + "\n" + "FE LATITUDE" + "   : " + newArr[19] + "\n" + "FE LONGITUDE" + "  : " + newArr[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
+      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + val[5] + "_" + val[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_" + "TO" + "_" + val[7] + "_" + val[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_DOWN" + "_REGTSEL" + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
 
     } else if (service === "pl") {
-      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + newArr[5] + "_" + newArr[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_" + "TO" + "_" + newArr[7] + "_" + newArr[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_PACKET_LOSS_QUALITY" + "_REGTSEL" + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "    : " + newArr[5] + "\n" + "NE SITE NAME" + "  : " + newArr[9] + "\n" + "NE ALAMAT" + "     : " + newArr[13] + "\n" + "NE LATITUDE" + "   : " + newArr[17] + "\n" + "NE LONGITUDE" + "  : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "    : " + newArr[7] + "\n" + "FE SITE NAME" + "  : " + newArr[11] + "\n" + "FE ALAMAT" + "     : " + newArr[15] + "\n" + "FE LATITUDE" + "   : " + newArr[19] + "\n" + "FE LONGITUDE" + "  : " + newArr[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
+      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + val[5] + "_" + val[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_" + "TO" + "_" + val[7] + "_" + val[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_PACKET_LOSS_QUALITY" + "_REGTSEL" + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
 
     } else if (service === "fl") {
-      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + newArr[5] + "_" + newArr[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_" + "TO" + "_" + newArr[7] + "_" + newArr[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_FLICKER_QUALITY" + "_REGTSEL" + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + newArr[1] + "\n" + "NE SITE ID" + "    : " + newArr[5] + "\n" + "NE SITE NAME" + "  : " + newArr[9] + "\n" + "NE ALAMAT" + "     : " + newArr[13] + "\n" + "NE LATITUDE" + "   : " + newArr[17] + "\n" + "NE LONGITUDE" + "  : " + newArr[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + newArr[3] + "\n" + "FE SITE ID" + "    : " + newArr[7] + "\n" + "FE SITE NAME" + "  : " + newArr[11] + "\n" + "FE ALAMAT" + "     : " + newArr[15] + "\n" + "FE LATITUDE" + "   : " + newArr[19] + "\n" + "FE LONGITUDE" + "  : " + newArr[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
+      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + val[5] + "_" + val[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_" + "TO" + "_" + val[7] + "_" + val[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_') + "_FLICKER_QUALITY" + "_REGTSEL" + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional" + "\n" + "#PIC TSEL : ";
 
     }
   }
+
+  document.getElementById("datek").value = document.getElementById("datek").value.replace(/undefined/g, "");
 
 }
 
