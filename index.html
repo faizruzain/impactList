@@ -9,7 +9,8 @@
   <title>NodeB</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <script src="script.js" charset="utf-8"></script>
 </head>
@@ -18,13 +19,16 @@
 
   <ul class="nav justify-content-center nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="fo" aria-selected="true">Impact List</a>
+      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="fo"
+        aria-selected="true">Impact List</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="radio" aria-selected="false">Radio</a>
+      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="radio"
+        aria-selected="false">Radio</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="reportingoso" aria-selected="false">Reporting OSO</a>
+      <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="reportingoso"
+        aria-selected="false">Reporting OSO</a>
     </li>
   </ul>
 
@@ -38,7 +42,8 @@
       <textarea class="form-control" id="fix" name="fix" rows="8" cols="80"
         placeholder="Ex:&#10;GTO193&#10;GTO193,GTO194,GTO184&#10;GTO193;GTO194;GTO184&#10;BKO023MW1_TSEL_Pamenang2&#10;N_GTO184MM1_DMT ISAT Tapa&#10;(S) E-RGT504MM1-SIMPANG-KOTA-MEDAN*"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="parse();">Count</button>
-      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('fix').getAttribute('id'));">Reset</button>
+      <button class="btn btn-danger" type="button" name="button"
+        onclick="reset(document.getElementById('fix').getAttribute('id'));">Reset</button>
       <br>
       <br>
       <label for="fixRes">Result:</label>
@@ -49,11 +54,13 @@
 
         <label>Separate with : </label>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="," onchange="newSeparate(document.getElementById('inlineRadio6').getAttribute('id'));">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value=","
+            onchange="newSeparate(document.getElementById('inlineRadio6').getAttribute('id'));">
           <label class="form-check-label" for="inlineRadio6">Semicolon ( ; )</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value=";" onchange="newSeparate(document.getElementById('inlineRadio7').getAttribute('id'));">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value=";"
+            onchange="newSeparate(document.getElementById('inlineRadio7').getAttribute('id'));">
           <label class="form-check-label" for="inlineRadio7">Comma ( , )</label>
         </div>
 
@@ -69,7 +76,8 @@
       <br>
       <textarea id="radio" class="form-control" name="datekRadio" rows="8" cols="80"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="radio();">Submit</button>
-      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('radio').getAttribute('id'));">Reset</button>
+      <button class="btn btn-danger" type="button" name="button"
+        onclick="reset(document.getElementById('radio').getAttribute('id'));">Reset</button>
       <br>
       <br>
       <label for="datek">Result:</label>
@@ -79,18 +87,21 @@
       <div class="myRadio">
 
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="rad" id="inlineRadio1" value="dwn" onchange="radioService(document.getElementById('inlineRadio1').value);">
+          <input class="form-check-input" type="radio" name="rad" id="inlineRadio1" value="dwn"
+            onchange="radioService(document.getElementById('inlineRadio1').value);">
           <label class="form-check-label" for="inlineRadio1">DOWN</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="rad" id="inlineRadio2" value="pl" onchange="radioService(document.getElementById('inlineRadio2').value);">
+          <input class="form-check-input" type="radio" name="rad" id="inlineRadio2" value="pl"
+            onchange="radioService(document.getElementById('inlineRadio2').value);">
           <label class="form-check-label" for="inlineRadio2">PACKETLOSS</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="rad" id="inlineRadio3" value="fl" onchange="radioService(document.getElementById('inlineRadio3').value);">
+          <input class="form-check-input" type="radio" name="rad" id="inlineRadio3" value="fl"
+            onchange="radioService(document.getElementById('inlineRadio3').value);">
           <label class="form-check-label" for="inlineRadio3">FLICKER</label>
         </div>
-
+        
       </div>
 
     </div>
@@ -103,23 +114,23 @@
       <textarea class="form-control" id="report" name="reporting" rows="8" cols="80">&#13;&#10;SALSIM:&nbsp;</textarea>
 
       <button class="btn btn-primary" type="button" name="button" onclick="report();">Submit</button>
-      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('report').getAttribute('id'));">Reset</button>
+      <button class="btn btn-danger" type="button" name="button"
+        onclick="reset(document.getElementById('report').getAttribute('id'));">Reset</button>
       <br>
       <br>
       <label for="reportRes">Result:</label>
       <br>
-      <textarea class="form-control" id="reportRes" name="reportRes" rows="8" cols="80" onclick="this.focus();this.select()" readonly></textarea>
+      <textarea class="form-control" id="reportRes" name="reportRes" rows="8" cols="80"
+        onclick="this.focus();this.select()" readonly></textarea>
 
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 
 
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-  <script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
 </body>
 
 </html>
