@@ -139,6 +139,7 @@ function reset(id) {
     document.getElementById("inlineRadio1").checked = false;
     document.getElementById("inlineRadio2").checked = false;
     document.getElementById("inlineRadio3").checked = false;
+    document.getElementById("RegTsel").options.selectedIndex=0;
 
   } else if (id === "report") {
     document.getElementById("report").value = "\nSALSIM: ";
