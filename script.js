@@ -1,4 +1,6 @@
 function setImpact(res) {
+  res = [...new Set(res)];
+  console.log(res);
   return "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Affected Site(s):" + "\n" + res;
 
 }
