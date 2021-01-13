@@ -15,7 +15,7 @@ label, a {
 textarea {
   height: 300px;
   font-size: 1rem !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 6px !important;
 }
 
 .custom {
@@ -34,4 +34,11 @@ textarea {
 ul {
   margin-bottom: 10px !important;
   margin-top: 10px !important;
+}
+
+select {
+  width: 183px !important;
+  margin-bottom: -18px !important;
+  padding-right: 0 !important;
+  
 }
