@@ -71,7 +71,23 @@
     <!-- Radio Tab -->
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="radio-tab">
 
-      <label for="datek">Datek Radio:</label>
+      <label for="datekRadio">Datek Radio:</label>
+
+      <select onchange="reset(document.getElementById('RegTsel').getAttribute('id'));" name="RegTsel" id="RegTsel">
+        <option value="null">REGTSEL</option>
+        <option value="1">SUMBAGUT</option>
+        <option value="2">SUMBAGSEL</option>
+        <option value="3">JABODETABEK</option>
+        <option value="4">JAWA BARAT</option>
+        <option value="5">JAWA TENGAH & DIY</option>
+        <option value="6">JAWA TIMUR</option>
+        <option value="7">BALNUS</option>
+        <option value="8">KALIMANTAN</option>
+        <option value="9">SULAWESI</option>
+        <option value="10">SUMBAGTENG</option>
+        <option value="11">PUMA</option>
+      </select>
+
       <br>
       <textarea id="radio" class="form-control" name="datekRadio" rows="8" cols="80"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="radio();">Submit</button>
