@@ -39,8 +39,7 @@
 
       <label for="fix">Site ID Counter:</label>
       <br>
-      <textarea class="form-control" id="fix" name="fix" rows="8" cols="80"
-        placeholder="Ex:&#10;GTO193&#10;GTO193,GTO194,GTO184&#10;GTO193;GTO194;GTO184&#10;BKO023MW1_TSEL_Pamenang2&#10;N_GTO184MM1_DMT ISAT Tapa&#10;(S) E-RGT504MM1-SIMPANG-KOTA-MEDAN*"></textarea>
+      <textarea class="form-control" id="fix" name="fix" rows="8" cols="80"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="parse();">Count</button>
       <button class="btn btn-danger" type="button" name="button"
         onclick="reset(document.getElementById('fix').getAttribute('id'));">Reset</button>
@@ -101,7 +100,7 @@
             onchange="radioService(document.getElementById('inlineRadio3').value);">
           <label class="form-check-label" for="inlineRadio3">FLICKER</label>
         </div>
-        
+
       </div>
 
     </div>
