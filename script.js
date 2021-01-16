@@ -81,7 +81,7 @@ function radio() {
   if (regTsel === "null") {
     regTsel = "";
   }
- 
+
   if (!val) {
     document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional " + regTlkm(regTsel) + "\n" + "#PIC TSEL : ";
     document.getElementById("inlineRadio1").checked = false;
@@ -107,7 +107,7 @@ function radioService(service) {
   if (regTsel === "null") {
     regTsel = "";
   }
-  
+
 
   if (val) {
     if (service === "dwn") {
@@ -139,7 +139,7 @@ function reset(id) {
     document.getElementById("inlineRadio1").checked = false;
     document.getElementById("inlineRadio2").checked = false;
     document.getElementById("inlineRadio3").checked = false;
-    document.getElementById("RegTsel").options.selectedIndex=0;
+    document.getElementById("RegTsel").options.selectedIndex = 0;
 
   } else if (id === "report") {
     document.getElementById("report").value = "\nSALSIM: ";
@@ -149,6 +149,10 @@ function reset(id) {
     document.getElementById("inlineRadio1").checked = false;
     document.getElementById("inlineRadio2").checked = false;
     document.getElementById("inlineRadio3").checked = false;
+  }
+  else if (id === "ipbbran") {
+    document.getElementById("ipbbran").value = "";
+    document.getElementById("ipbbranRes").value = "";
   }
 
 }
@@ -175,5 +179,27 @@ function newSeparate(id) {
     document.getElementById("fixRes").value = val;
 
   }
+
+}
+
+function getSLD() {
+  let val = document.getElementById("ipbbran").value.split("\n");
+
+  let ipbb = [];
+  let ipran = [];
+
+  for (let i = 0; i < val.length; i++) {
+    if (/Hundred|100G|TenGig/g.test(val[i])) {
+      ipbb.push(val[i]);
+
+    } else if (/\d/g.test(val[i])) {
+      ipran.push(val[i]);
+
+    }
+
+  }
+
+  document.getElementById("ipbbranRes").value = "Jumlah Link IPBB & IPRAN: " + (ipbb.length + ipran.length) + "\n" + "Core: \n" + "RAN: " + ipran.length + "\n" + "\n" + "Detail Link\nIPBB:\n" + ipbb + "\n" + "IPRAN:\n" + ipran;
+  document.getElementById("ipbbranRes").value = document.getElementById("ipbbranRes").value.replace(/,/g, "\n");
 
 }

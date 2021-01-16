@@ -65,6 +65,16 @@
 
       </div>
 
+      <!-- IPBB/IPRAN -->
+      <label for="ipbbran">IPBB/IPRAN:</label>
+      <textarea spellcheck="false" class="form-control" id="ipbbran" name="ipbbran" rows="8" cols="80"></textarea>
+      <button class="btn btn-primary" type="button" name="button" onclick="getSLD();">Count</button>
+      <button class="btn btn-danger" type="button" name="button" onclick="reset(document.getElementById('ipbbran').getAttribute('id'));">Reset</button>
+      <br>
+      <br>
+      <!-- result -->
+      <label for="ipbbranRes">Result:</label>
+      <textarea spellcheck="false" class="form-control" id="ipbbranRes" name="ipbbranRes" rows="8" cols="80"></textarea>
     </div>
 
 
@@ -73,7 +83,8 @@
 
       <label for="datekRadio">Datek Radio:</label>
 
-      <select class="form-select form-select-sm" onchange="reset(document.getElementById('RegTsel').getAttribute('id'));" name="RegTsel" id="RegTsel">
+      <select class="form-select form-select-sm"
+        onchange="reset(document.getElementById('RegTsel').getAttribute('id'));" name="RegTsel" id="RegTsel">
         <option value="null">REGTSEL</option>
         <option value="1">SUMBAGUT</option>
         <option value="2">SUMBAGSEL</option>
@@ -110,7 +121,7 @@
           <input class="form-check-input" type="radio" name="rad" id="inlineRadio2" value="pl"
             onchange="radioService(document.getElementById('inlineRadio2').value);">
           <label class="form-check-label" for="inlineRadio2">PACKETLOSS</label>
-        </div>
+       </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="rad" id="inlineRadio3" value="fl"
             onchange="radioService(document.getElementById('inlineRadio3').value);">
@@ -126,7 +137,8 @@
 
       <label for="reporting">Reporting OSO</label>
       <br>
-      <textarea spellcheck="false" class="form-control" id="report" name="reporting" rows="8" cols="80">&#13;&#10;SALSIM:&nbsp;</textarea>
+      <textarea spellcheck="false" class="form-control" id="report" name="reporting" rows="8"
+        cols="80">&#13;&#10;SALSIM:&nbsp;</textarea>
 
       <button class="btn btn-primary" type="button" name="button" onclick="report();">Submit</button>
       <button class="btn btn-danger" type="button" name="button"
