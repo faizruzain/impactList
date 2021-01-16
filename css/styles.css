@@ -42,3 +42,19 @@ select {
   padding-right: 0 !important;
   
 }
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+img {
+  width: 19px;
+  padding-bottom: 15px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+a{
+  text-decoration: none;
+}
