@@ -5,10 +5,11 @@
 }
 
 body {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
 }
 
-label, a {
+label,
+a {
   font-weight: bold;
 }
 
@@ -28,7 +29,6 @@ textarea {
     padding-left: 2% !important;
     padding-right: 2% !important;
   }
-
 }
 
 ul {
@@ -40,21 +40,25 @@ select {
   width: 183px !important;
   margin-bottom: -18px !important;
   padding-right: 0 !important;
-  
 }
 
 footer {
+  font-size: 12px;
   margin-top: 20px;
   text-align: center;
 }
 
-img {
-  width: 19px;
-  padding-bottom: 15px;
-  margin-right: 20px;
-  margin-left: 10px;
+footer p {
+  margin-bottom: 5px;
 }
 
-a{
+img {
+  width: 12px;
+  padding-bottom: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+a {
   text-decoration: none;
 }
