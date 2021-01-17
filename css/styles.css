@@ -22,6 +22,7 @@ textarea {
 .custom {
   padding-left: 15% !important;
   padding-right: 15% !important;
+  flex: 1 0 auto !important;
 }
 
 @media (max-width: 500px) {
@@ -46,6 +47,7 @@ footer {
   font-size: 12px;
   margin-top: 20px;
   text-align: center;
+  flex-shrink: 0;
 }
 
 footer p {
@@ -61,4 +63,13 @@ img {
 
 a {
   text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
 }
