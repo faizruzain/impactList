@@ -189,17 +189,17 @@ function getSLD() {
   let ipran = [];
 
   for (let i = 0; i < val.length; i++) {
-    if (/Hundred|100G|TenGig/g.test(val[i])) {
+    if (/core|\dg/i.test(val[i])) {
       ipbb.push(val[i]);
 
-    } else if (/\d/g.test(val[i])) {
+    } else if (/ran|\dm/i.test(val[i])) {
       ipran.push(val[i]);
 
     }
 
   }
 
-  document.getElementById("ipbbranRes").value = "Jumlah Link IPBB & IPRAN: " + (ipbb.length + ipran.length) + "\n" + "Core: \n" + "RAN: " + ipran.length + "\n" + "\n" + "Detail Link\nIPBB:\n" + ipbb + "\n" + "IPRAN:\n" + ipran;
+  document.getElementById("ipbbranRes").value = "Jumlah Link IPBB & IPRAN: " + (ipbb.length + ipran.length) + "\n" + "Core: " + ipbb.length + "\n" + "RAN : " + ipran.length + "\n" + "\n" + "Detail Link\nIPBB:\n" + ipbb + "\n" + "IPRAN:\n" + ipran;
   document.getElementById("ipbbranRes").value = document.getElementById("ipbbranRes").value.replace(/,/g, "\n");
 
 }
