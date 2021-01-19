@@ -16,7 +16,7 @@ a {
 textarea {
   height: 300px;
   font-size: 1rem !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 7px !important;
 }
 
 .custom {
@@ -69,7 +69,23 @@ html,
 body {
   height: 100%;
 }
+
 body {
   display: flex;
   flex-direction: column;
 }
+
+.my-flex-box {
+  margin-bottom: 7px;
+}
+
+.my-form-check {
+  margin-left: 10px;
+  padding-top: 4px;
+}
+
+#radio {
+
+}
+
+
