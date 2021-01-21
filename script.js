@@ -145,6 +145,8 @@ function reset(id) {
     document.getElementById("inlineRadio2").checked = false;
     document.getElementById("inlineRadio3").checked = false;
     document.getElementById("RegTsel").options.selectedIndex = 0;
+    document.getElementById("flexCheckDefault").checked = false;
+    document.getElementById("flexCheckDefault2").checked = false;
 
   } else if (id === "report") {
     document.getElementById("report").value = "\nSALSIM: ";
