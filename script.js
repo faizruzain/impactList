@@ -196,10 +196,10 @@ function getSLD() {
   let ipran = [];
 
   for (let i = 0; i < val.length; i++) {
-    if (/core|\dg/i.test(val[i])) {
+    if (/-core/i.test(val[i])) {
       ipbb.push(val[i]);
 
-    } else if (/ran|\dm/i.test(val[i])) {
+    } else if (/-ran/i.test(val[i])) {
       ipran.push(val[i]);
 
     }
