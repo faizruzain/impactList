@@ -191,7 +191,6 @@ function newSeparate(id) {
 
 function getSLD() {
   let val = document.getElementById("ipbbran").value.split("\n");
-  console.log(val)
 
   let ipbb = [];
   let ipran = [];
