@@ -191,22 +191,40 @@ function newSeparate(id) {
 
 function getSLD() {
   let val = document.getElementById("ipbbran").value.split("\n");
+  console.log(val)
 
   let ipbb = [];
   let ipran = [];
+  
+  let ipbb_link = []
+  let ipran_link = []
+
+  let patt1 = /-ran-|ran-|-ran/
+  let patt2 = /core|-sr-|sr-|-sr/
+  let patt3 = /\x\d{2,}/i
+  let patt4 = /\x\d{1}/i
 
   for (let i = 0; i < val.length; i++) {
-    if (/-core/i.test(val[i])) {
-      ipbb.push(val[i]);
-
-    } else if (/-ran/i.test(val[i])) {
-      ipran.push(val[i]);
-
+    if(patt1.test(val[i])) {
+      ipran.push(val[i])
+    } else if(patt2.test(val[i])) {
+      ipbb.push(val[i])
+    } else if(patt3.test(val[i])) {
+      ipbb_link.push(val[i])
+    } else if(patt4.test(val[i])) {
+      ipran_link.push(val[i])
     }
+    // if (/-core/i.test(val[i])) {
+    //   ipbb.push(val[i]);
+
+    // } else if (/ran/.test(val[i])) {
+    //   ipran.push(val[i]);
+
+    // }
 
   }
-
-  document.getElementById("ipbbranRes").value = "Jumlah Link IPBB & IPRAN: " + (ipbb.length + ipran.length) + "\n" + "Core: " + ipbb.length + "\n" + "RAN : " + ipran.length + "\n" + "\n" + "Detail Link\nIPBB:\n" + ipbb + "\n" + "IPRAN:\n" + ipran;
+  
+  document.getElementById("ipbbranRes").value = "Jumlah Link IPBB & IPRAN: " + (ipbb.length + ipran.length) + "\n" + "Core: " + ipbb.length + "\n" + "RAN : " + ipran.length + "\n" + "Detail Link:\n" + (ipbb_link.length===0 ? "IPBB:\n" : "IPBB:\n" + ipbb_link + "\n" ) + (ipran_link.length===0 ? "IPRAN:\n" : "IPRAN:\n" + ipran_link + "\n") + "Interface:\n" + ipbb + "\n" + ipran;
   document.getElementById("ipbbranRes").value = document.getElementById("ipbbranRes").value.replace(/,/g, "\n");
 
 }
