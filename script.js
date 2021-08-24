@@ -214,13 +214,6 @@ function getSLD() {
     } else if(patt4.test(val[i])) {
       ipran_link.push(val[i])
     }
-    // if (/-core/i.test(val[i])) {
-    //   ipbb.push(val[i]);
-
-    // } else if (/ran/.test(val[i])) {
-    //   ipran.push(val[i]);
-
-    // }
 
   }
   
