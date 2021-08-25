@@ -200,8 +200,9 @@ function getSLD() {
 
   let patt1 = /-ran-|ran-|-ran/
   let patt2 = /core|-sr-|sr-|-sr/
-  let patt3 = /\x\d{2,}/i
-  let patt4 = /\x\d{1}/i
+  let patt3 = /x\d{2,}g/i
+  let patt4 = /x\d{1}g/i
+  let patt5 = /x\d{3,}mb/i
 
   for (let i = 0; i < val.length; i++) {
     if(patt1.test(val[i])) {
@@ -212,9 +213,13 @@ function getSLD() {
       ipbb_link.push(val[i])
     } else if(patt4.test(val[i])) {
       ipran_link.push(val[i])
+    } else if(patt5.test(val[i])) {
+      ipran_link.push(val[i])
     }
 
   }
+
+  console.log(patt5.test("3x100G Kupang - Maumere"));
   
   document.getElementById("ipbbranRes").value = "Jumlah Link IPBB & IPRAN: " + (ipbb.length + ipran.length) + "\n" + "Core: " + ipbb.length + "\n" + "RAN : " + ipran.length + "\n" + "Detail Link:\n" + (ipbb_link.length===0 ? "IPBB:\n" : "IPBB:\n" + ipbb_link + "\n" ) + (ipran_link.length===0 ? "IPRAN:\n" : "IPRAN:\n" + ipran_link + "\n") + "Interface:\n" + ipbb + "\n" + ipran;
   document.getElementById("ipbbranRes").value = document.getElementById("ipbbranRes").value.replace(/,/g, "\n");
