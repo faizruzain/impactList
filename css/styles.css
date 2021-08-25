@@ -34,7 +34,8 @@ textarea {
 
 ul {
   margin-bottom: 10px !important;
-  margin-top: 10px !important;
+  /* margin-top: 10px !important; */
+  background-color: white !important;
 }
 
 select {
@@ -84,8 +85,7 @@ body {
   padding-top: 4px;
 }
 
-#radio {
-
+.custom{
+  margin-top: 50px;
 }
-
 
