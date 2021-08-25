@@ -198,11 +198,11 @@ function getSLD() {
   let ipbb_link = []
   let ipran_link = []
 
-  let patt1 = /-ran-|ran-|-ran/
-  let patt2 = /core|-sr-|sr-|-sr/
+  let patt1 = /(-ran-|ran-|-ran)/
+  let patt2 = /(core|-sr-|sr-|-sr)/
   let patt3 = /x\d{2,}g/i
   let patt4 = /x\d{1}g/i
-  let patt5 = /x\d{3,}mb/i
+  let patt5 = /x\d{3,}mb|m/i
 
   for (let i = 0; i < val.length; i++) {
     if(patt1.test(val[i])) {
