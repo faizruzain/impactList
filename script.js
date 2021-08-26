@@ -140,7 +140,7 @@ function radio() {
       actual_fe_idu : val2.length === 0 ? val[3] : "",
       fe_site_id    : val[7] === undefined ? val2[2][1] : val[7],
       fe_site_name  : val[11] === undefined ? val2[3][1].replace(/\s|\W|\./g, "_") : val[11].replace(/\s|\W|\./g, "_"),
-      fe_alamat     : val[15] === undefined ? "" : val[11],
+      fe_alamat     : val[15] === undefined ? "" : val[15],
       fe_latitude   : val[19] === undefined ? "" : val[19],
       fe_longitude  : val[23] === undefined ? "" : val[23]
     }
