@@ -127,7 +127,6 @@ function radio() {
   }
   const type = bast1AndType()
  
-  console.log(val2)
   const datekRadio = {
     nearEnd : {
       actual_ne_idu : val2.length === 0 ? val[1] : "",
@@ -191,8 +190,6 @@ FE LONGITUDE  : ${datekRadio.farEnd.fe_longitude}`
 #Action   : Koordinasi dengan rekan Mitratel dan Regional ${regTelkom ? regTelkom : ""}
 #PIC TSEL : `
   const finalDatek = ticketNumber+headline+ticketDuration+bast_1+ne+fe+info
- 
-  console.log(finalDatek);
   
   document.getElementById("datek").value = finalDatek
   
