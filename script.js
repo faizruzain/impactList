@@ -77,58 +77,125 @@ function regTlkm(regTsel) {
 
 function radio() {
   let val = document.getElementById("radio").value.replace(/\t/g, "").split("\n");
-  let regTsel = document.getElementById("RegTsel").value;
-  if (regTsel === "null") {
-    regTsel = "";
-  }
 
-  if (val.length === 1) {
-    document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional " + regTlkm(regTsel) + "\n" + "#PIC TSEL : ";
-    document.getElementById("inlineRadio1").checked = false;
-    document.getElementById("inlineRadio2").checked = false;
-    document.getElementById("inlineRadio3").checked = false;
-
-  } else {
-    // document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : " + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional " + regTlkm(regTsel) + "\n" + "#PIC TSEL : ";
-    radioService("dwn");
-    document.getElementById("inlineRadio1").checked = true;
-    document.getElementById("inlineRadio2").checked = false;
-    document.getElementById("inlineRadio3").checked = false;
-
-  }
-
-  document.getElementById("datek").value = document.getElementById("datek").value.replace(/undefined/g, "");
-
-}
-
-function radioService(service) {
-  let val = document.getElementById("radio").value.replace(/\t/g, "").split("\n");
-  let premium = document.getElementById("flexCheckDefault").checked;
-  let garansi = document.getElementById("flexCheckDefault2").checked;
-
-  let regTsel = document.getElementById("RegTsel").value;
-  if (regTsel === "null") {
-    regTsel = "";
-  }
-
-
-  if (val) {
-    if (service === "dwn") {
-      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + val[5] + "_" + val[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_" + "TO" + "_" + val[7] + "_" + val[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_DOWN" + (garansi ? "_GARANSI" : "_NOGARANSI")  + (premium ? "_PREMIUM" : "") + "_REGTSEL" + regTsel + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional " + regTlkm(regTsel) + "\n" + "#PIC TSEL : ";
-
-    } else if (service === "pl") {
-      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + val[5] + "_" + val[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_" + "TO" + "_" + val[7] + "_" + val[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_PACKETLOSS_QUALITY" + (garansi ? "_GARANSI" : "_NOGARANSI")  + (premium ? "_PREMIUM" : "") + "_REGTSEL" + regTsel + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional " + regTlkm(regTsel) + "\n" + "#PIC TSEL : ";
-
-    } else if (service === "fl") {
-      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + val[5] + "_" + val[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_" + "TO" + "_" + val[7] + "_" + val[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_FLICKER_QUALITY" + (garansi ? "_GARANSI" : "_NOGARANSI") + (premium ? "_PREMIUM" : "") + "_REGTSEL" + regTsel + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional " + regTlkm(regTsel) + "\n" + "#PIC TSEL : ";
-
-    } else if (service === "prv") {
-      document.getElementById("datek").value = "[OPEN]" + "\n" + "\n" + "Ticket No." + "\n" + "Nossa  : " + "\n" + "Remedy : " + "\n" + "\n" + "Headline : TSEL_RADIOIP_" + val[5] + "_" + val[9].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_" + "TO" + "_" + val[7] + "_" + val[11].toUpperCase().split(" ", 2).join(" ").replace(/\s/, '_').replace(/\//g, "").replace(/-/g, "_") + "_PREVENTIVE" + (garansi ? "_GARANSI" : "_NOGARANSI") + (premium ? "_PREMIUM" : "") + "_REGTSEL" + regTsel + "\n" + "\n" + "#OPEN  : " + "\n" + "#CLOSE : -" + "\n" + "#TTR   : -" + "\n" + "\n" + "BAST-1 : " + "\n" + "Status : " + "\n" + "\n" + "ACTUAL NE IDU" + " : " + val[1] + "\n" + "NE SITE ID" + "    : " + val[5] + "\n" + "NE SITE NAME" + "  : " + val[9] + "\n" + "NE ALAMAT" + "     : " + val[13] + "\n" + "NE LATITUDE" + "   : " + val[17] + "\n" + "NE LONGITUDE" + "  : " + val[21] + "\n" + "\n" + "ACTUAL FE IDU" + " : " + val[3] + "\n" + "FE SITE ID" + "    : " + val[7] + "\n" + "FE SITE NAME" + "  : " + val[11] + "\n" + "FE ALAMAT" + "     : " + val[15] + "\n" + "FE LATITUDE" + "   : " + val[19] + "\n" + "FE LONGITUDE" + "  : " + val[23] + "\n" + "\n" + "#Info     : Power aman." + "\n" + "#Action   : Koordinasi dengan rekan Mitratel dan Regional " + regTlkm(regTsel) + "\n" + "#PIC TSEL : ";
+  let val2 = []
+  if(val.length === 4) {
+    
+    for(var i=0; i<val.length; i++) {
+     val2.push(val[i].split(":"))      
     }
   }
 
-  document.getElementById("datek").value = document.getElementById("datek").value.replace(/undefined/g, "");
+  let regTsel = document.getElementById("RegTsel").value;
+  if (regTsel === "null") {
+    regTsel = "";
+  }
 
+  const regTelkom = regTlkm(regTsel)
+
+  function impact() {
+    let radioBtn = document.querySelectorAll('.radio-aing')
+
+    if(radioBtn[0].checked) {
+      return "DOWN"
+    } else if(radioBtn[1].checked) {
+      return "PACKETLOSS_QUALITY"
+    } else if(radioBtn[2].checked) {
+      return "FLICKER_QUALITY"
+    } else if(radioBtn[3].checked) {
+      return "PREVENTIVE"
+    }
+    
+  }
+  const service = impact()
+
+  function bast1AndType() {
+    let checkBoxes = document.querySelectorAll(".checkbox-aing")
+
+    if(checkBoxes[0].checked && checkBoxes[1].checked) {
+      return "GARANSI_PREMIUM"
+    } else if(checkBoxes[0].checked && !checkBoxes[1].checked) {
+      return "NOGARANSI_PREMIUM"
+    } else if(checkBoxes[1].checked){
+      return "GARANSI"
+    } else if(checkBoxes[0].checked) {
+      return "PREMIUM"
+    } else if(!checkBoxes[0].checked && !checkBoxes[1].checked) {
+      return "NOGARANSI"
+    }
+    
+  }
+  const type = bast1AndType()
+ 
+  console.log(val2)
+  const datekRadio = {
+    nearEnd : {
+      actual_ne_idu : val2.length === 0 ? val[1] : "",
+      ne_site_id    : val[5] === undefined ? val2[0][1] : val[5],
+      ne_site_name  : val[9] === undefined ? val2[1][1].replace(/\s|\W|\./g, "_") : val[9].replace(/\s|\W|\./g, "_"),
+      ne_alamat     : val[13] === undefined ? "" : val[13],
+      ne_latitude   : val[17] === undefined ? "" : val[17],
+      ne_longitude  : val[21] === undefined ? "" : val[21]
+    },
+    farEnd : {
+      actual_fe_idu : val2.length === 0 ? val[3] : "",
+      fe_site_id    : val[7] === undefined ? val2[2][1] : val[7],
+      fe_site_name  : val[11] === undefined ? val2[3][1].replace(/\s|\W|\./g, "_") : val[11].replace(/\s|\W|\./g, "_"),
+      fe_alamat     : val[15] === undefined ? "" : val[11],
+      fe_latitude   : val[19] === undefined ? "" : val[19],
+      fe_longitude  : val[23] === undefined ? "" : val[23]
+    }
+    
+  }
+
+  const ticketNumber = `[OPEN]
+
+Ticket No.
+Nossa  : 
+Remedy : 
+
+`
+  let headline = `Headline : TSEL_RADIOIP_${datekRadio.nearEnd.ne_site_id}_${datekRadio.nearEnd.ne_site_name}_TO_${datekRadio.farEnd.fe_site_id}_${datekRadio.farEnd.fe_site_name}_${service}_${type}_REGTSEL${regTsel}`
+  headline = headline.replace(/_{2,}/g, "_").toUpperCase()
+
+  const ticketDuration = `
+
+#OPEN  : 
+#CLOSE : -
+#TTR   : -
+  `
+  const bast_1 = `
+BAST-1 : 
+Status : 
+  `
+  const ne = `
+ACTUAL NE IDU : ${datekRadio.nearEnd.actual_ne_idu}
+NE SITE ID    : ${datekRadio.nearEnd.ne_site_id}
+NE SITE NAME  : ${datekRadio.nearEnd.ne_site_name}
+NE ALAMAT     : ${datekRadio.nearEnd.ne_alamat}
+NE LATITUDE   : ${datekRadio.nearEnd.ne_latitude}
+NE LONGITUDE  : ${datekRadio.nearEnd.ne_longitude}`
+
+  const fe = `
+
+ACTUAL FE IDU : ${datekRadio.farEnd.actual_fe_idu}
+FE SITE ID    : ${datekRadio.farEnd.fe_site_id}
+FE SITE NAME  : ${datekRadio.farEnd.fe_site_name}
+FE ALAMAT     : ${datekRadio.farEnd.fe_alamat}
+FE LATITUDE   : ${datekRadio.farEnd.fe_latitude}
+FE LONGITUDE  : ${datekRadio.farEnd.fe_longitude}`
+
+  const info = `
+
+#Info     : Power aman.
+#Action   : Koordinasi dengan rekan Mitratel dan Regional ${regTelkom ? regTelkom : ""}
+#PIC TSEL : `
+  const finalDatek = ticketNumber+headline+ticketDuration+bast_1+ne+fe+info
+ 
+  console.log(finalDatek);
+  
+  document.getElementById("datek").value = finalDatek
+  
 }
 
 function reset(id) {
