@@ -97,20 +97,39 @@
         </select>
 
         <div class="form-check my-form-check">
-          <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+          <input class="form-check-input checkbox-aing" type="checkbox" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             PREMIUM
           </label>
         </div>
 
         <div class="form-check my-form-check">
-          <input class="form-check-input" type="checkbox" id="flexCheckDefault2">
+          <input class="form-check-input checkbox-aing" type="checkbox" id="flexCheckDefault2">
           <label class="form-check-label" for="flexCheckDefault2">
             GARANSI
           </label>
         </div>
       </div>
-      
+
+      <div class="myRadio">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input radio-aing" type="radio" name="rad" id="inlineRadio1" value="dwn">
+          <label class="form-check-label" for="inlineRadio1">DOWN</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input radio-aing" type="radio" name="rad" id="inlineRadio2" value="pl">
+          <label class="form-check-label" for="inlineRadio2">PACKETLOSS</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input radio-aing" type="radio" name="rad" id="inlineRadio3" value="fl">
+          <label class="form-check-label" for="inlineRadio3">FLICKER</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input radio-aing" type="radio" name="rad" id="inlineRadio4" value="prv">
+          <label class="form-check-label" for="inlineRadio4">PREVENTIVE</label>
+        </div>
+      </div>
+
       <textarea spellcheck="false" id="radio" class="form-control" name="datekRadio" rows="8" cols="80"></textarea>
       <button class="btn btn-primary" type="button" name="button" onclick="radio();">Submit</button>
       <button class="btn btn-danger" type="button" name="button"
@@ -121,28 +140,6 @@
       <br>
       <textarea spellcheck="false" class="form-control" id="datek" name="datek" rows="8" cols="80"></textarea>
 
-      <div class="myRadio">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="rad" id="inlineRadio1" value="dwn"
-            onchange="radioService(document.getElementById('inlineRadio1').value);">
-          <label class="form-check-label" for="inlineRadio1">DOWN</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="rad" id="inlineRadio2" value="pl"
-            onchange="radioService(document.getElementById('inlineRadio2').value);">
-          <label class="form-check-label" for="inlineRadio2">PACKETLOSS</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="rad" id="inlineRadio3" value="fl"
-            onchange="radioService(document.getElementById('inlineRadio3').value);">
-          <label class="form-check-label" for="inlineRadio3">FLICKER</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="rad" id="inlineRadio4" value="prv"
-            onchange="radioService(document.getElementById('inlineRadio4').value);">
-          <label class="form-check-label" for="inlineRadio4">PREVENTIVE</label>
-        </div>
-      </div>
     </div>
 
     <!-- Reporting OSO Tab -->
