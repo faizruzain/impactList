@@ -77,6 +77,10 @@ function regTlkm(regTsel) {
 
 function radio() {
   let val = document.getElementById("radio").value.replace(/\t/g, "").split("\n");
+  
+  val = val.filter((val) => {
+    return val
+  })
 
   let val2 = []
   if(val.length === 4) {
@@ -104,6 +108,8 @@ function radio() {
       return "FLICKER_QUALITY"
     } else if(radioBtn[3].checked) {
       return "PREVENTIVE"
+    } else {
+      return "???"
     }
     
   }
@@ -131,7 +137,7 @@ function radio() {
     nearEnd : {
       actual_ne_idu : val2.length === 0 ? val[1] : "",
       ne_site_id    : val[5] === undefined ? val2[0][1] : val[5],
-      ne_site_name  : val[9] === undefined ? val2[1][1].replace(/\s|\W|\./g, "_") : val[9].replace(/\s|\W|\./g, "_"),
+      ne_site_name  : val[9] === undefined ? val2[1][1] : val[9],
       ne_alamat     : val[13] === undefined ? "" : val[13],
       ne_latitude   : val[17] === undefined ? "" : val[17],
       ne_longitude  : val[21] === undefined ? "" : val[21]
@@ -139,7 +145,7 @@ function radio() {
     farEnd : {
       actual_fe_idu : val2.length === 0 ? val[3] : "",
       fe_site_id    : val[7] === undefined ? val2[2][1] : val[7],
-      fe_site_name  : val[11] === undefined ? val2[3][1].replace(/\s|\W|\./g, "_") : val[11].replace(/\s|\W|\./g, "_"),
+      fe_site_name  : val[11] === undefined ? val2[3][1] : val[11],
       fe_alamat     : val[15] === undefined ? "" : val[15],
       fe_latitude   : val[19] === undefined ? "" : val[19],
       fe_longitude  : val[23] === undefined ? "" : val[23]
@@ -154,7 +160,7 @@ Nossa  :
 Remedy : 
 
 `
-  let headline = `Headline : TSEL_RADIOIP_${datekRadio.nearEnd.ne_site_id}_${datekRadio.nearEnd.ne_site_name}_TO_${datekRadio.farEnd.fe_site_id}_${datekRadio.farEnd.fe_site_name}_${service}_${type}_REGTSEL${regTsel}`
+  let headline = `Headline : TSEL_RADIOIP_${datekRadio.nearEnd.ne_site_id}_${datekRadio.nearEnd.ne_site_name.replace(/\s|\W|\./g, "_")}_TO_${datekRadio.farEnd.fe_site_id}_${datekRadio.farEnd.fe_site_name.replace(/\s|\W|\./g, "_")}_${service}_${type}_REGTSEL${regTsel}`
   headline = headline.replace(/_{2,}/g, "_").toUpperCase()
 
   const ticketDuration = `
@@ -164,7 +170,7 @@ Remedy :
 #TTR   : -
   `
   const bast_1 = `
-BAST-1 : 
+BAST-1 : ${val.length === 4 ? "REDEPLOY" : ""}
 Status : 
   `
   const ne = `
