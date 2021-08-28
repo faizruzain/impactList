@@ -79,7 +79,7 @@ function radio() {
   let val = document.getElementById("radio").value.replace(/\t/g, "").split("\n");
   
   val = val.filter((val) => {
-    return val
+    return /\b\s/.test(val)
   })
 
   let val2 = []
