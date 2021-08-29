@@ -79,8 +79,9 @@ function radio() {
   let val = document.getElementById("radio").value.replace(/\t/g, "").split("\n");
   
   val = val.filter((val) => {
-    return /\b\s/.test(val)
+    return val
   })
+  
 
   let val2 = []
   if(val.length === 4) {
