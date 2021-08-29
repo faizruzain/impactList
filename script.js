@@ -291,8 +291,14 @@ function getSLD() {
   }
 
   let interface = ipbb.concat(ipran)
-  
-  document.getElementById("ipbbranRes").value = "Jumlah Link IPBB & IPRAN: " + (ipbb.length + ipran.length) + "\n" + "Core: " + ipbb.length + "\n" + "RAN : " + ipran.length + "\n" + "Detail Link:\n" + (ipbb_link.length===0 ? "IPBB:\n" : "IPBB:\n" + ipbb_link + "\n" ) + (ipran_link.length===0 ? "IPRAN:\n" : "IPRAN:\n" + ipran_link + "\n") + "Interface:\n" + interface;
-  document.getElementById("ipbbranRes").value = document.getElementById("ipbbranRes").value.replace(/,/g, "\n");
+
+  const finalResult = `Jumlah Link IPBB & IPRAN: ${(ipbb.length + ipran.length).length === 0 ? "-" : (ipbb.length + ipran.length)}
+Core: ${ipbb.length === 0 ? "-" : ipbb.length}
+RAN: ${ipran.length === 0 ? "-" : ipran.length}
+Detail Link:
+IPBB: ${ipbb_link.length === 0 ? "-" : "\n" + ipbb_link}
+IPRAN: ${ipran_link.length === 0 ? "-" : "\n" + ipran_link}
+Interface: ${interface.length === 0 ? "" : "\n" + interface}`
+  document.getElementById("ipbbranRes").value = finalResult.replace(/,/g, "\n")
   
 }
