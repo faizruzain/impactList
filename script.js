@@ -161,8 +161,10 @@ Nossa  :
 Remedy : 
 
 `
-  let headline = `Headline : TSEL_RADIOIP_${datekRadio.nearEnd.ne_site_id}_${datekRadio.nearEnd.ne_site_name.replace(/\s|\W|\./g, "_")}_TO_${datekRadio.farEnd.fe_site_id}_${datekRadio.farEnd.fe_site_name.replace(/\s|\W|\./g, "_")}_${service}_${type}_REGTSEL${regTsel}`
-  headline = headline.replace(/_{2,}/g, "_").toUpperCase()
+  let headline = `Headline : `
+  let HEADLINE = `TSEL_RADIOIP_${datekRadio.nearEnd.ne_site_id}_${datekRadio.nearEnd.ne_site_name.replace(/\s|\W|\./g, "_")}_TO_${datekRadio.farEnd.fe_site_id}_${datekRadio.farEnd.fe_site_name.replace(/\s|\W|\./g, "_")}_${service}_${type}_REGTSEL${regTsel}`
+  HEADLINE = HEADLINE.replace(/_{2,}/g, "_").toUpperCase()
+  headline = headline+HEADLINE
 
   const ticketDuration = `
 
@@ -199,9 +201,30 @@ FE LONGITUDE  : ${datekRadio.farEnd.fe_longitude}`
   const finalDatek = ticketNumber+headline+ticketDuration+bast_1+ne+fe+info
   
   document.getElementById("datek").value = finalDatek
-  
+  calcHeight(finalDatek)
+  let numberOfNewLine = finalDatek.match(/\n/g).length
+  document.querySelector(".textarea-aing").style.height = `${300+(numberOfNewLine*20)+6+1}px`
+   
 }
 
+// Dealing with Textarea Height
+function calcHeight(value) {
+  let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+  let newHeight = 300 + (numberOfLineBreaks * 20) + 6 + 1;
+  return newHeight;
+
+}
+
+let textarea = document.querySelector(".textarea-aing");
+textarea.addEventListener("keyup", (event) => {
+  if (event.key === "Enter" || event.key === "Backspace") {
+    textarea.style.height = calcHeight(textarea.value) + "px";
+  }
+
+});
+
+
+console.log(document.querySelector(".textarea-aing").style.height)
 function reset(id) {
   if (id === "fix") {
     document.getElementById("fix").value = "";
@@ -210,6 +233,7 @@ function reset(id) {
     document.getElementById("inlineRadio7").checked = false;
 
   } else if (id === "radio") {
+    document.querySelector(".textarea-aing").style.height = '300px';
     document.getElementById("radio").value = "";
     document.getElementById("datek").value = "";
     document.getElementById("inlineRadio1").checked = false;
