@@ -1,26 +1,28 @@
 .myRadio {
-  text-align: center;
+  /* text-align: center; */
   /* padding-top: 3px; */
   padding-bottom: 10px;
 }
 
 body {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
 }
 
-label, a {
+label,
+a {
   font-weight: bold;
 }
 
 textarea {
   height: 300px;
   font-size: 1rem !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 7px !important;
 }
 
 .custom {
   padding-left: 15% !important;
   padding-right: 15% !important;
+  flex: 1 0 auto !important;
 }
 
 @media (max-width: 500px) {
@@ -28,17 +30,65 @@ textarea {
     padding-left: 2% !important;
     padding-right: 2% !important;
   }
-
 }
 
 ul {
   margin-bottom: 10px !important;
-  margin-top: 10px !important;
+  /* margin-top: 10px !important; */
+  background-color: white !important;
 }
 
 select {
   width: 183px !important;
   margin-bottom: -18px !important;
   padding-right: 0 !important;
-  
+}
+
+footer {
+  font-size: 12px;
+  margin-top: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+img {
+  width: 12px;
+  padding-bottom: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-flex-box {
+  margin-bottom: 7px;
+}
+
+.my-form-check {
+  margin-left: 10px;
+  padding-top: 4px;
+}
+
+.custom{
+  margin-top: 50px;
+}
+
+.textarea-aing {
+  height: 300px;
 }
