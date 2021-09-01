@@ -6,17 +6,45 @@
 
 body {
   font-family: "Inconsolata", monospace;
+  background-color: #C8C6C6;
 }
 
-label,
+label {
+  font-weight: bold;
+}
+
 a {
   font-weight: bold;
+  color: #000;
+}
+
+#home-tab, #contact-tab, #profile-tab {
+  font-weight: bold;
+  color: #000;
+  /* background-color: #4B6587; */
+  text-decoration: none;
+  border: 1.5px solid black !important;
+}
+
+a.active {
+  background-color: #4B6587 !important;
 }
 
 textarea {
   height: 300px;
   font-size: 1rem !important;
   margin-bottom: 7px !important;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem 0 #222;
+  outline: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+textarea:read-only {
+  background-color: #ccc;
 }
 
 .custom {
@@ -35,7 +63,8 @@ textarea {
 ul {
   margin-bottom: 10px !important;
   /* margin-top: 10px !important; */
-  background-color: white !important;
+  background-color: #C8C6C6 !important;
+  border: 2px solid black !important;
 }
 
 select {
@@ -91,4 +120,38 @@ body {
 
 .textarea-aing {
   height: 300px;
+}
+
+.count-btn-saweria {
+  background-color: #faae2b;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem 0 #222;
+  outline: none;
+  transition: box-shadow .1s ,transform .2s;
+  font-size: 1.125rem;
+  text-decoration: none;
+  width: 5.5rem;
+  height: 3rem;
+  padding: 0px;
+}
+
+.reset-btn-saweria {
+  background-color: #ff4456;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem 0 #222;
+  outline: none;
+  transition: box-shadow .1s ,transform .2s;
+  font-size: 1.125rem;
+  text-decoration: none;
+  width: 5.5rem;
+  height: 3rem;
+  padding: 0px;
+}
+
+.count-btn-saweria:active, .reset-btn-saweria:active {
+  transform: scale(0.9);
 }
