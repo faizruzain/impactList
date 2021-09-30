@@ -173,8 +173,8 @@ Remedy :
 #TTR   : -
   `
   const bast_1 = `
-BAST-1 : ${val.length === 4 ? "REDEPLOY" : ""}
-Status : 
+BAST-1 : 
+Status : ${val.length === 4 ? "REDEPLOY" : "OOW"}
   `
   const ne = `
 ACTUAL NE IDU : ${datekRadio.nearEnd.actual_ne_idu}
@@ -239,6 +239,7 @@ function reset(id) {
     document.getElementById("inlineRadio1").checked = false;
     document.getElementById("inlineRadio2").checked = false;
     document.getElementById("inlineRadio3").checked = false;
+    document.getElementById("inlineRadio4").checked = false;
     document.getElementById("RegTsel").options.selectedIndex = 0;
     document.getElementById("flexCheckDefault").checked = false;
     document.getElementById("flexCheckDefault2").checked = false;
