@@ -196,7 +196,7 @@ FE LONGITUDE  : ${datekRadio.farEnd.fe_longitude}`
   const info = `
 
 #Info     : Power aman.
-#Action   : Koordinasi dengan rekan Mitratel dan Regional ${regTelkom ? regTelkom : ""}
+#Action   : Koordinasi dengan rekan PST dan Regional ${regTelkom ? regTelkom : ""}
 #PIC TSEL : `
   const finalDatek = ticketNumber+headline+ticketDuration+bast_1+ne+fe+info
   
