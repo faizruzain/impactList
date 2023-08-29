@@ -98,8 +98,10 @@ function radio() {
 
   const regTelkom = regTlkm(regTsel)
 
+  let radioBtn = document.querySelectorAll('.radio-aing')
+
   function impact() {
-    let radioBtn = document.querySelectorAll('.radio-aing')
+    // let radioBtn = document.querySelectorAll('.radio-aing')
 
     if(radioBtn[0].checked) {
       return "DOWN"
@@ -162,7 +164,7 @@ Remedy :
 
 `
   let headline = `Headline : `
-  let HEADLINE = `TSEL_RADIOIP_${datekRadio.nearEnd.ne_site_id}_${datekRadio.nearEnd.ne_site_name.replace(/\s|\W|\./g, "_")}_TO_${datekRadio.farEnd.fe_site_id}_${datekRadio.farEnd.fe_site_name.replace(/\s|\W|\./g, "_")}_${service}_${type}_REGTSEL${regTsel}`
+  let HEADLINE = `TSEL_${radioBtn[1].checked || radioBtn[2].checked ? `CNQ` : ``}_RADIOIP_${datekRadio.nearEnd.ne_site_id}_${datekRadio.nearEnd.ne_site_name.replace(/\s|\W|\./g, "_")}_TO_${datekRadio.farEnd.fe_site_id}_${datekRadio.farEnd.fe_site_name.replace(/\s|\W|\./g, "_")}_${service}_${type}_REGTSEL${regTsel}`
   HEADLINE = HEADLINE.replace(/_{2,}/g, "_").toUpperCase()
   headline = headline+HEADLINE
 
