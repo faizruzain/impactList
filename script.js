@@ -1,7 +1,7 @@
 function setImpact(res) {
   res = [...new Set(res)];
-  return "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Detail Site:" + "\n" + res;
-
+  //return "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Detail Site:" + "\n" + res; 
+  return "Jumlah Site:" + res.length + "\n" + "2G:" + res.length + "NE" + "\n" + "3G:" + res.length + "NE" + "\n" + "4G:" + res.length + "NE" + "\n" + "Detail Site:" + "\n" + "[" + res + "]";
 }
 
 function parse() {
