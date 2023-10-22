@@ -30,8 +30,8 @@
         aria-controls="reportingoso" aria-selected="false">Reporting OSO</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link report" id="contact-tab" data-bs-toggle="tab" href="#BlockNumber" role="tab"
-        aria-controls="BlockNumber" aria-selected="false">Block Number</a>
+      <a class="nav-link report" id="contact-tab" data-bs-toggle="tab" href="#blockNumber" role="tab"
+        aria-controls="blockNumber" aria-selected="false">Block Number</a>
     </li>
   </ul>
 
@@ -162,19 +162,20 @@
     </div>
 
     <!-- Block Number Tab -->
-    <div class="tab-pane fade" id="BlockNumber" role="tabpanel" aria-labelledby="BlockNumber">
-      <label for="BlockNumber">Block Number</label>
+    <div class="tab-pane fade" id="blockNumber" role="tabpanel" aria-labelledby="blockNumber">
+      <label for="blockNumber">Block Number</label>
       <br>
-      <textarea spellcheck="false" id="BlockNumber" name="reporting" rows="8" cols="80"></textarea>
-      <button class="count-btn-saweria" type="button" name="button" onclick="report();">Submit</button>
+      <textarea spellcheck="false" id="BlockNumber" name="BlockNumber" rows="8" cols="80"></textarea>
+      <button class="count-btn-saweria" type="button" name="button" onclick="blockNum();">Submit</button>
       <button class="reset-btn-saweria" type="button" name="button"
-        onclick="reset(document.getElementById('report').getAttribute('id'));">Reset</button>
+        onclick="reset(document.getElementById('BlockNumber').getAttribute('id'));">Reset</button>
       <br>
       <br>
       <label for="reportRes">Result:</label>
       <br>
-      <textarea spellcheck="false" id="reportRes" name="reportRes" rows="8" cols="80"
-        onclick="this.focus();this.select()" readonly></textarea>
+      <div class="d-grid gap-2" id="blocknum">
+        <!-- <button class="btn btn-primary" type="button">ADD CNACLR: CSC=65534, CID=K'081524053, LP=65534, PFX=K'*65534#, FUNC=REJ;</button> -->
+      </div>
     </div>
 
 

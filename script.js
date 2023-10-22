@@ -338,6 +338,12 @@ function reset(id) {
   } else if (id === "ipbbran") {
     document.getElementById("ipbbran").value = "";
     document.getElementById("ipbbranRes").value = "";
+  } else if (id === "BlockNumber") {
+    document.getElementById("BlockNumber").value = "";
+    const btns = document.querySelectorAll('[blocknum="blocknum"]');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].remove();
+    }
   }
 }
 
@@ -405,7 +411,34 @@ Interface: ${interface.length === 0 ? "" : "\n" + interface}`;
 }
 
 // block number
-const num = `
+
+const blockNum = () => {
+  const val = document.getElementById("BlockNumber").value;
+
+  const res = val.match(/(\d{7,10})/gi);
+
+  for (var i = 0; i < res.length; i++) {
+    var command = `ADD CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, FUNC=REJ;\n`;
+    const btn = document.createElement("btn");
+    btn.innerHTML = command;
+    btn.setAttribute("class", "btn btn-primary");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("data-bs-toggle", "button");
+    btn.setAttribute("autocomplete", "off");
+    btn.setAttribute("blocknum", "blocknum");
+    // h7.onclick = copy(command);
+    btn.setAttribute("onclick", "copy(this.innerText)");
+    document.getElementById("blocknum").appendChild(btn);
+    // console.log(command);
+  }
+};
+
+const copy = (cmd) => {
+  console.log(cmd);
+  navigator.clipboard.writeText(cmd);
+};
+
+/*
 081524053
 0816241
 085971717
@@ -435,11 +468,4 @@ const num = `
 08385442
 085929647
 0838387
-`;
-
-const res = num.match(/0(\d{7,10})/gi);
-
-for (var i = 0; i < res.length; i++) {
-  var command = `ADD CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, FUNC=REJ;`;
-  console.log(command);
-}
+*/
