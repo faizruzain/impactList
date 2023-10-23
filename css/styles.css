@@ -152,6 +152,55 @@ body {
   padding: 0px;
 }
 
+/* block button */
+
+.block-btn-saweria {
+  background-color: #dc3545;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem 0 #222;
+  outline: none;
+  transition: box-shadow .1s ,transform .2s;
+  font-size: 1.125rem;
+  text-decoration: none;
+  width: 5.5rem;
+  height: 3rem;
+  padding: 0px;
+}
+
+/* unblock button */
+
+.unblock-btn-saweria {
+  background-color: #0d6efd;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem 0 #222;
+  outline: none;
+  transition: box-shadow .1s ,transform .2s;
+  font-size: 1.125rem;
+  text-decoration: none;
+  width: 5.5rem;
+  height: 3rem;
+  padding: 0px;
+}
+
+.reset-block-btn-saweria {
+  background-color: #9ba6b4;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem 0 #222;
+  outline: none;
+  transition: box-shadow .1s ,transform .2s;
+  font-size: 1.125rem;
+  text-decoration: none;
+  width: 5.5rem;
+  height: 3rem;
+  padding: 0px;
+}
+
 .count-btn-saweria:active, .reset-btn-saweria:active {
   transform: scale(0.9);
 }
