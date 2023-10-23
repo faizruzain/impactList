@@ -340,10 +340,7 @@ function reset(id) {
     document.getElementById("ipbbranRes").value = "";
   } else if (id === "BlockNumber") {
     document.getElementById("BlockNumber").value = "";
-    const btns = document.querySelectorAll('[blocknum="blocknum"]');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].remove();
-    }
+    document.getElementById("block-unblock-num").value = "";
   }
 }
 
@@ -413,58 +410,33 @@ Interface: ${interface.length === 0 ? "" : "\n" + interface}`;
 // block number
 
 const blockNum = () => {
-  delAllBtn();
-
   const val = document.getElementById("BlockNumber").value;
 
   const res = val.match(/(\d{7,10})/gi);
 
+  var final = ``;
   for (var i = 0; i < res.length; i++) {
-    var command = `ADD CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, FUNC=REJ;`;
-    const btn = document.createElement("btn");
-    btn.innerHTML = command;
-    btn.setAttribute("class", "btn btn-danger");
-    btn.setAttribute("type", "button");
-    btn.setAttribute("data-bs-toggle", "button");
-    btn.setAttribute("autocomplete", "off");
-    btn.setAttribute("blocknum", "blocknum");
-    btn.setAttribute("onclick", "copy(this.innerText)");
-    document.getElementById("blocknum").appendChild(btn);
+    final += `ADD CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, FUNC=REJ;\n`;
   }
+
+  const txt = document.getElementById("block-unblock-num");
+  txt.value = final;
 };
 
 // unblock number
 
 const unBlockNum = () => {
-  delAllBtn();
-
   const val = document.getElementById("BlockNumber").value;
 
   const res = val.match(/(\d{7,10})/gi);
 
+  var final = ``;
   for (var i = 0; i < res.length; i++) {
-    var command = `RMV CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, TMIDX=0;`;
-    const btn = document.createElement("btn");
-    btn.innerHTML = command;
-    btn.setAttribute("class", "btn btn-primary");
-    btn.setAttribute("type", "button");
-    btn.setAttribute("data-bs-toggle", "button");
-    btn.setAttribute("autocomplete", "off");
-    btn.setAttribute("blocknum", "blocknum");
-    btn.setAttribute("onclick", "copy(this.innerText)");
-    document.getElementById("blocknum").appendChild(btn);
+    final += `RMV CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, TMIDX=0;\n`;
   }
-};
 
-const copy = (cmd) => {
-  navigator.clipboard.writeText(cmd);
-};
-
-const delAllBtn = () => {
-  const btns = document.querySelectorAll('[blocknum="blocknum"]');
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].remove();
-  }
+  const txt = document.getElementById("block-unblock-num");
+  txt.value = final;
 };
 
 /*
