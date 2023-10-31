@@ -409,14 +409,34 @@ Interface: ${interface.length === 0 ? "" : "\n" + interface}`;
 
 // block number
 
-const blockNum = () => {
+const blockNum = (name) => {
   const val = document.getElementById("BlockNumber").value;
 
   const res = val.match(/(\d{7,10})/gi);
 
   var final = ``;
-  for (var i = 0; i < res.length; i++) {
-    final += `ADD CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, FUNC=REJ;\n`;
+
+  switch (name) {
+    case "block-huawei":
+      for (var i = 0; i < res.length; i++) {
+        final += `ADD CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, FUNC=REJ;\n`;
+      }
+      break;
+
+    case "block-zte-sby":
+      for (var i = 0; i < res.length; i++) {
+        final += `CREATE_MASK_LIMIT:TAG=15,CONIDX=0,NET=1,DN="${res[i]}",TYPE=1;\n`;
+      }
+      break;
+
+    case "block-zte-mks/bpp":
+      for (var i = 0; i < res.length; i++) {
+        final += `ADD OPDNAL:ENTR=18,DIGIT="${res[i]}",NAME="Reject",DISDAS1=1000;\n`;
+      }
+      break;
+
+    default:
+      break;
   }
 
   const txt = document.getElementById("block-unblock-num");
@@ -425,50 +445,36 @@ const blockNum = () => {
 
 // unblock number
 
-const unBlockNum = () => {
+const unBlockNum = (name) => {
   const val = document.getElementById("BlockNumber").value;
 
   const res = val.match(/(\d{7,10})/gi);
 
   var final = ``;
-  for (var i = 0; i < res.length; i++) {
-    final += `RMV CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, TMIDX=0;\n`;
+
+  switch (name) {
+    case "unblock-huawei":
+      for (var i = 0; i < res.length; i++) {
+        final += `RMV CNACLR: CSC=65534, CID=K'${res[i]}, LP=65534, PFX=K'*65534#, TMIDX=0;\n`;
+      }
+      break;
+
+    case "unblock-zte-sby":
+      for (var i = 0; i < res.length; i++) {
+        final += `DELETE_MASK_LIMIT:NET=1,DN="${res[i]}",TYPE=1;\n`;
+      }
+      break;
+
+    case "unblock-zte-mks/bpp":
+      for (var i = 0; i < res.length; i++) {
+        final += `DEL DNAL:ENTR=18,DIGIT="${res[i]}",NANNAT="ALL";\n`;
+      }
+      break;
+
+    default:
+      break;
   }
 
   const txt = document.getElementById("block-unblock-num");
   txt.value = final;
 };
-
-/*
-081524053
-0816241
-085971717
-087843943
-085654490
-087761212
-081945863
-085925383
-085934526
-087815230
-087778334
-081999852
-081933957
-081933968
-087810684
-087842337
-087860611
-087814093
-087817674
-087844402
-08592729
-083150822
-0856911749
-08385467
-087848216
-087754981
-08385442
-085929647
-0838387
-*/
-
-// RMV CNACLR: CSC=65534, CID=K'nums, LP=65534, PFX=K'*65534#, TMIDX=0;

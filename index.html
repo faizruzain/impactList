@@ -166,10 +166,23 @@
       <label for="blockNumber">Block Number</label>
       <br>
       <textarea spellcheck="false" id="BlockNumber" name="BlockNumber" rows="8" cols="80"></textarea>
-      <button class="block-btn-saweria" type="button" name="button" onclick="blockNum();">Block</button>
-      <button class="unblock-btn-saweria" type="button" name="button" onclick="unBlockNum()">Unblock</button>
-      <button class="reset-block-btn-saweria" type="button" name="button"
-        onclick="reset(document.getElementById('BlockNumber').getAttribute('id'));">Reset</button>
+      <div class="d-grid gap-2">
+
+        <button class="btn btn-danger" type="button" name="block-huawei" onclick="blockNum(this.name);">Block
+          HUAWEI</button>
+        <button class="btn btn-primary" type="button" name="unblock-huawei" onclick="unBlockNum(this.name)">Unblock
+          HUAWEI</button>
+        <button class="btn btn-danger" type="button" name="block-zte-sby" onclick="blockNum(this.name);">Block ZTE
+          SBY</button>
+        <button class="btn btn-primary" type="button" name="unblock-zte-sby" onclick="unBlockNum(this.name)">Unblock
+          ZTE SBY</button>
+        <button class="btn btn-danger" type="button" name="block-zte-mks/bpp" onclick="blockNum(this.name);">Block ZTE
+          MKS/BPP</button>
+        <button class="btn btn-primary" type="button" name="unblock-zte-mks/bpp" onclick="unBlockNum(this.name)">Unblock
+          ZTE MKS/BPP</button>
+        <button class="btn btn-dark" type="button" name="button"
+          onclick="reset(document.getElementById('BlockNumber').getAttribute('id'));">Reset</button>
+      </div>
       <br>
       <br>
       <label for="reportRes">Result:</label>
