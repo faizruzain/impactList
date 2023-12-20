@@ -233,7 +233,7 @@ function radio() {
   const ticketNumber = `[OPEN]
 
 Ticket No.
-Nossa  : 
+Insera : 
 Remedy : 
 
 `;
